@@ -12,7 +12,7 @@
     --blue: #9ac9c4;
     --indigo: #92b2ca;
     --violet: #c0a7c7;
-    --bordersize: 7px;
+    --bordersize: 6px;
 }
 html, body {
     margin: 0;
@@ -25,7 +25,7 @@ body {
     font-family: 'Epilogue', Arial, sans-serif;
 }
 #page-border {
-    border: var(--bordersize) solid var(--gray4);
+    border: var(--bordersize) solid var(--gray3);
     height: 100%;
     -webkit-box-sizing: border-box !important;
     -moz-box-sizing: border-box !important;
@@ -53,7 +53,7 @@ nav a {
     transition: background-color 150ms;
 }
 nav a:hover {
-    background-color: var(--gray4);
+    background-color: var(--gray3);
     transition: background-color 200ms;
 }
 #nav-left a {
@@ -73,7 +73,7 @@ footer {
     align-items: center;
     background-color: var(--gray4);
     width: 100%;
-    padding: var(--bordersize) 0.25rem 0  0;
+    padding: 0.5rem;
     box-sizing: border-box;
     position: absolute;
     bottom: 0;
