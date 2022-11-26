@@ -27,5 +27,6 @@ function setDarkMode(enable) {
 }
 
 function toggleDarkMode() {
+    body.style.transition = "150ms";
     setDarkMode(!body.classList.contains("dark"));
 }
