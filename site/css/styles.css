@@ -1,21 +1,6 @@
-:root {
-    --bordersize: 6px;
-    /* base16 Tomorrow Night */
-    --gray-0: #27292c;
-    --gray-20: #35383c;
-    --gray-40: #474c52;
-    --gray-60: #a7a8a7;
-    --gray-80: #d7dad8;
-    --gray-100: #e4e4e4;
-    --red: #d77c79;
-    --orange: #e6a472;
-    --yellow: #f4cf86;
-    --green: #c2c77b;
-    --blue: #9ac9c4;
-    --indigo: #92b2ca;
-    --violet: #c0a7c7;
-}
-.light-theme {
+:root, .light {
+    --page-border-size: 6px;
+
     /* base16 Tomorrow */
     --gray-100: #272727;
     --gray-80: #60605f;
@@ -31,11 +16,44 @@
     --indigo: #5286bc;
     --violet: #9c71b7;
 }
+.dark {
+    /* base16 Tomorrow Night */
+    --gray-0: #27292c;
+    --gray-20: #35383c;
+    --gray-40: #474c52;
+    --gray-60: #a7a8a7;
+    --gray-80: #d7dad8;
+    --gray-100: #e4e4e4;
+    --red: #d77c79;
+    --orange: #e6a472;
+    --yellow: #f4cf86;
+    --green: #c2c77b;
+    --blue: #9ac9c4;
+    --indigo: #92b2ca;
+    --violet: #c0a7c7;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* base16 Tomorrow Night */
+        --gray-0: #27292c;
+        --gray-20: #35383c;
+        --gray-40: #474c52;
+        --gray-60: #a7a8a7;
+        --gray-80: #d7dad8;
+        --gray-100: #e4e4e4;
+        --red: #d77c79;
+        --orange: #e6a472;
+        --yellow: #f4cf86;
+        --green: #c2c77b;
+        --blue: #9ac9c4;
+        --indigo: #92b2ca;
+        --violet: #c0a7c7;
+    }
+}
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    transition: background-color 500ms;
 }
 body {
     background-color: var(--gray-0);
@@ -45,7 +63,7 @@ body, button, input, select {
     font-family: 'Epilogue', Arial, sans-serif;
 }
 #page-border {
-    border: var(--bordersize) solid var(--gray-40);
+    border: var(--page-border-size) solid var(--gray-40);
     height: 100%;
     -webkit-box-sizing: border-box !important;
     -moz-box-sizing: border-box !important;
@@ -113,7 +131,7 @@ footer {
 .social-icon {
     fill: var(--gray-60);
     height: 2rem;
-    padding: 0 var(--bordersize);
+    padding: 0 var(--page-border-size);
     transition: 40ms;
 }
 .social-icon:hover {
