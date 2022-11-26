@@ -1,5 +1,5 @@
 :root {
-    --page-border-size: 6px;
+    --page-border-size: 7px;
 
     /* base16 Tomorrow */
     --gray-100: #272727;
@@ -51,6 +51,8 @@ body, button, input, select {
     -moz-box-sizing: border-box !important;
     box-sizing: border-box !important;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 a {
     color: var(--indigo);
@@ -59,7 +61,11 @@ a {
 nav, footer {
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
     padding: 0;
+    flex-grow: 0;
+    z-index: 10;
 }
 footer {
     align-items: center;
@@ -98,7 +104,8 @@ button {
 main {
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding: 2rem;
+    height: 100%;
 }
 footer {
     justify-content: space-between;
