@@ -1,4 +1,4 @@
-:root, .light {
+:root {
     --page-border-size: 6px;
 
     /* base16 Tomorrow */
@@ -31,24 +31,6 @@
     --blue: #9ac9c4;
     --indigo: #92b2ca;
     --violet: #c0a7c7;
-}
-@media (prefers-color-scheme: dark) {
-    :root {
-        /* base16 Tomorrow Night */
-        --gray-0: #27292c;
-        --gray-20: #35383c;
-        --gray-40: #474c52;
-        --gray-60: #a7a8a7;
-        --gray-80: #d7dad8;
-        --gray-100: #e4e4e4;
-        --red: #d77c79;
-        --orange: #e6a472;
-        --yellow: #f4cf86;
-        --green: #c2c77b;
-        --blue: #9ac9c4;
-        --indigo: #92b2ca;
-        --violet: #c0a7c7;
-    }
 }
 html, body {
     margin: 0;

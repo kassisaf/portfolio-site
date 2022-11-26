@@ -1,5 +1,7 @@
+/* Shared elements */
 const body = document.querySelector("body");
 
+/* Get dark mode preference */
 const preferredTheme = window.localStorage.getItem("theme");
 if (preferredTheme) {
     setDarkMode(preferredTheme == "dark");
@@ -8,21 +10,22 @@ else {
     setDarkMode(true);
 }
 
+/* Event listeners */
+document.getElementById("dark-mode-btn").addEventListener("click", toggleDarkMode);
+
+/* Helper functions */
+
 function setDarkMode(enable) {
     if (enable) {
         body.classList.add("dark");
-        body.classList.remove("light");
         window.localStorage.setItem("theme", "dark");
     }
     else {
-        body.classList.add("light");
         body.classList.remove("dark");
         window.localStorage.setItem("theme", "light");
     }
 }
 
 function toggleDarkMode() {
-    setDarkMode(body.classList.contains("light"));
+    setDarkMode(!body.classList.contains("dark"));
 }
-
-document.getElementById("dark-mode-btn").addEventListener("click", toggleDarkMode);
