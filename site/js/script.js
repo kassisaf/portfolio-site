@@ -35,7 +35,7 @@ document.getElementById("dark-mode-btn").addEventListener("click", toggleDarkMod
 for (section of NAV_SECTIONS) {
     const navLink = document.getElementById(`nav-${section}`);
     navLink.addEventListener("click", function(event) {
-        loadFragment(`content/${event.target.closest("button").name}.html`);
+        loadFragment(`content/${event.target.closest("a").name}.html`);
         setActive(this.name);
     })
 }
