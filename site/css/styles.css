@@ -41,6 +41,7 @@
 }
 html, body {
     height: 100%;
+    min-width: 450px;
 }
 body {
     background-color: var(--gray-0);
@@ -117,7 +118,7 @@ footer ul {
 }
 
 /* Navburger */
-#hamburger-chk {
+#nav-expand {
     display: none;
 }
 #hamburger {
@@ -125,6 +126,7 @@ footer ul {
     cursor: pointer;
     display: none;
     padding: 1rem 0;
+    margin: 0 0.5rem;
 }
 nav {
     z-index: 10;
@@ -137,31 +139,38 @@ nav {
         display: block;
     }
     nav, nav ul {
+        position: fixed;
         background-color: var(--gray-20);
     }
+    nav {
+        height: 5.25rem;
+        width: calc(100% - var(--page-border-size) * 2);
+        box-shadow: 0 calc(var(--page-border-size) * -1) 0 var(--page-border-size) var(--gray-40);
+    }
     nav ul {
-        position: absolute;
-        top: 4rem;
+        top: -12rem;
+        left: var(--page-border-size);
+        width: calc(100% - var(--page-border-size) * 2);
         text-align: center;
-        width: 100%;
-        transition: all 400ms;
-        top: -13rem;
+        transition: 400ms;
+        z-index: -1;
     }
-    nav ul li {
+    nav ul li, nav ul li a {
         display: block;
+        padding: 0;
     }
-    #hamburger-chk:checked ~ ul {
-        top: 4.25rem;
+    #main-content {
+        margin-top: 3rem;
     }
-    #logo {
-        display: block;
-        margin: 0 auto;
+    #nav-expand:checked ~ ul {
+        top: 5rem;
     }
 }
 
 /* General styling */
 a {
     color: var(--indigo);
+    position: relative
 }
 button {
     color: var(--indigo);
