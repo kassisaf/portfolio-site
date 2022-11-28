@@ -49,9 +49,8 @@ async function fetchHtmlAsText(url) {
 
 async function loadFragment(fragmentPath, newTitle) {
     contentDiv.innerHTML = await fetchHtmlAsText(`fragments/${fragmentPath}`);
-    if (newTitle) {
-        document.title = `${PAGE_TITLE_BASE} - ${newTitle}`;
-    }
+    document.title = `${PAGE_TITLE_BASE} - ${newTitle}`;
+    history.pushState(null, "", `#${newTitle}`);
 }
 
 function setActive(targetSection) {
