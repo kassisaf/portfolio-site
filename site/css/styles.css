@@ -46,7 +46,7 @@ body, button, input, select {
 }
 #page-border {
     border: var(--page-border-size) solid var(--gray-40);
-    height: 100%;
+    min-height: 100%;
     -webkit-box-sizing: border-box !important;
     -moz-box-sizing: border-box !important;
     box-sizing: border-box !important;
