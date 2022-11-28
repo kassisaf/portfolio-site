@@ -37,7 +37,8 @@ document.getElementById("dark-mode-btn").addEventListener("click", toggleDarkMod
 for (section of NAV_SECTIONS) {
     const navLink = document.getElementById(`nav-${section}`);
     navLink.addEventListener("click", function(event) {
-        loadFragment(`content/${event.target.closest("a").name}.html`, section);
+        let sectionName = event.target.closest("a").name;
+        loadFragment(`content/${sectionName}.html`, sectionName);
         setActive(this.name);
     })
 }
@@ -61,5 +62,5 @@ function setActive(targetSection) {
 }
 
 // Get home content on page load
-// loadFragment("content/home.html");
-loadFragment("content/about.html");
+// loadFragment("content/home.html", "home");
+loadFragment("content/about.html", "about");
