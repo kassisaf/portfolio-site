@@ -89,7 +89,7 @@ nav a {
     line-height: 3rem;
     transition: background-color 150ms;
 }
-nav a:hover, nav *.active, button:hover {
+nav a:hover, nav *.active, button:hover:not([disabled]) {
     background-color: var(--gray-40);
     transition: background-color 200ms;
 }
@@ -254,4 +254,23 @@ h1, .h1 {
     border-radius: 9px;
     background-color: var(--gray-40);
     height: 200px;
+}
+
+/* Courses table */
+
+
+/* Contact form */
+input {
+    display: block;
+    border: 2px solid var(--gray-80);
+    background-color: var(--gray-20);
+    color: var(--gray-100);
+    padding: 8px;
+}
+input[type=textarea] {
+    height: 300px;
+}
+input:focus {
+    border-color: var(--violet);
+    border: 2px solid var(--violet);
 }
