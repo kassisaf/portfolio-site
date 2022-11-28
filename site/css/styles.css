@@ -61,8 +61,8 @@ body, button, input, select {
 }
 #logo {
     position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
+    top: 1rem;
+    left: 1rem;
     font-size: 3.5rem;
     font-family: 'Condiment', Arial, sans-serif;
     user-select: none;
@@ -73,6 +73,9 @@ nav, footer {
     align-items: center;
     width: 100%;
     margin: 0 auto;
+}
+nav {
+    justify-content: flex-end;
 }
 nav ul, footer ul {
     display: flex;
@@ -155,11 +158,6 @@ p {
     float: left;
     margin: 0 1.25rem 1rem 0;
     transition: 90ms;
-}
-.about-pic:hover {
-    box-shadow: 4px 8px 22px #00000066;
-    transform: scale(150%) translate(15%, 15%);
-    transition: 250ms;
 }
 .social-icon {
     fill: var(--gray-60);

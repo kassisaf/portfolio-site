@@ -1,5 +1,7 @@
+const PAGE_TITLE_BASE = "akassis.dev";
 const NAV_SECTIONS = ["home", "about", "projects", "courses", "contact"];
 const body = document.querySelector("body");
+const contentDiv = document.getElementById("main-content");
 
 /* Dark mode */
 // Get dark mode preference
@@ -30,12 +32,12 @@ function toggleDarkMode() {
 document.getElementById("dark-mode-btn").addEventListener("click", toggleDarkMode);
 
 
-/* Load content in-place */
-// Use name of clicked button to fetch matching fragment
+/* SPA fetch mechanism */
+// Use name of clicked nav button to fetch matching fragment
 for (section of NAV_SECTIONS) {
     const navLink = document.getElementById(`nav-${section}`);
     navLink.addEventListener("click", function(event) {
-        loadFragment(`content/${event.target.closest("a").name}.html`);
+        loadFragment(`content/${event.target.closest("a").name}.html`, section);
         setActive(this.name);
     })
 }
@@ -44,18 +46,18 @@ async function fetchHtmlAsText(url) {
     return await (await fetch(url)).text()
 }
 
-async function loadFragment(fragmentName) {
-    const contentDiv = document.getElementById("main-content");
-    contentDiv.innerHTML = await fetchHtmlAsText(`fragments/${fragmentName}`);
+async function loadFragment(fragmentPath, newTitle) {
+    contentDiv.innerHTML = await fetchHtmlAsText(`fragments/${fragmentPath}`);
+    if (newTitle) {
+        document.title = `${PAGE_TITLE_BASE} - ${newTitle}`;
+    }
 }
 
 function setActive(targetSection) {
     for (section of NAV_SECTIONS) {
         document.getElementById(`nav-${section}`).classList.remove("active");
-        console.log(`making ${section} inactive`);
     }
     document.getElementById(`nav-${targetSection}`).classList.add("active");
-    console.log(`making ${targetSection} active`);
 }
 
 // Get home content on page load
