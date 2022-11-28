@@ -1,6 +1,5 @@
-/* Shared elements */
+const NAV_SECTIONS = ["home", "about", "projects", "courses", "contact"];
 const body = document.querySelector("body");
-
 
 /* Dark mode */
 // Get dark mode preference
@@ -32,18 +31,12 @@ document.getElementById("dark-mode-btn").addEventListener("click", toggleDarkMod
 
 
 /* Load content in-place */
-const NAV_SECTIONS = ["home", "about", "projects", "courses", "contact"];
 // Use name of clicked button to fetch matching fragment
-for (id of NAV_SECTIONS) {
-    const btn = document.getElementById(`nav-${id}`);
-    console.log(btn);
-    btn.addEventListener("click", function(event) {
-        if (event.target.name) {
-            loadFragment(`content/${event.target.name}.html`);
-        }
-        else {
-            loadFragment(`content/${event.target.parentElement.name}.html`);
-        }
+for (section of NAV_SECTIONS) {
+    const navLink = document.getElementById(`nav-${section}`);
+    navLink.addEventListener("click", function(event) {
+        loadFragment(`content/${event.target.closest("button").name}.html`);
+        setActive(this.name);
     })
 }
 
@@ -54,6 +47,15 @@ async function fetchHtmlAsText(url) {
 async function loadFragment(fragmentName) {
     const contentDiv = document.getElementById("main-content");
     contentDiv.innerHTML = await fetchHtmlAsText(`fragments/${fragmentName}`);
+}
+
+function setActive(targetSection) {
+    for (section of NAV_SECTIONS) {
+        document.getElementById(`nav-${section}`).classList.remove("active");
+        console.log(`making ${section} inactive`);
+    }
+    document.getElementById(`nav-${targetSection}`).classList.add("active");
+    console.log(`making ${targetSection} active`);
 }
 
 // Get home content on page load
