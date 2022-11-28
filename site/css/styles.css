@@ -93,7 +93,7 @@ nav a:hover, nav *.active, button:hover {
 main {
     display: flex;
     justify-content: center;
-    padding: 2rem 1.5rem 4rem;
+    padding: 3rem 1.5rem 4rem;
 }
 #main-content {
     display: flex;
