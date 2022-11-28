@@ -128,10 +128,38 @@ footer {
     transform: scale(1.3);
     transition: 120ms;
 }
+p {
+    text-indent: 2rem;
+    text-align: left;
+    max-width: 700px;
+    line-height: 140%;
+}
 
 .red {
     color: var(--red);
 }
 .violet {
     color: var(--violet);
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    max-width: 900px;
+    min-width: 400px;
+}
+.about-pic {
+    max-width: 400px;
+    box-shadow: 4px 8px 20px #00000066;
+    flex-shrink: 1;
+    border: 4px solid white;
+    float: left;
+    margin: 0 1.5rem 0.5rem 0;
+    transition: 90ms;
+}
+.about-pic:hover {
+    transform: scale(150%);
+    transition: 250ms;
 }

@@ -57,4 +57,5 @@ async function loadFragment(fragmentName) {
 }
 
 // Get home content on page load
-loadFragment("content/home.html");
+// loadFragment("content/home.html");
+loadFragment("content/about.html");
