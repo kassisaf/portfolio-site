@@ -62,4 +62,4 @@ function setActive(targetSection) {
 
 // Get home content on page load
 // loadFragment("content/home.html", "home");
-loadFragment("content/about.html", "about");
+loadFragment("content/projects.html", "projects");
