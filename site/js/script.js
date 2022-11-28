@@ -47,10 +47,17 @@ async function fetchHtmlAsText(url) {
     return await (await fetch(url)).text()
 }
 
-async function loadFragment(fragmentPath, newTitle) {
+async function loadFragment(fragmentPath, title) {
     contentDiv.innerHTML = await fetchHtmlAsText(`fragments/${fragmentPath}`);
-    document.title = `${PAGE_TITLE_BASE} - ${newTitle}`;
-    history.pushState(null, "", `#${newTitle}`);
+    if (title) {
+        var newTitle = `${title} - ${PAGE_TITLE_BASE}`;
+    }
+    else {
+        var newTitle = PAGE_TITLE_BASE;
+        title = "";
+    }
+    document.title = newTitle;
+    history.pushState(null, "", `#${title}`);
 }
 
 function setActive(targetSection) {
