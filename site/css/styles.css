@@ -67,6 +67,9 @@ body, button, input, select {
     font-size: 3.5rem;
     font-family: 'Condiment', Arial, sans-serif;
 }
+#logo a {
+    background: none;
+}
 nav, footer {
     display: flex;
     justify-content: space-between;
@@ -93,7 +96,7 @@ nav a:hover, nav *.active, button:hover {
 main {
     display: flex;
     justify-content: center;
-    padding: 3rem 1.5rem 4rem;
+    padding: 3.5rem 1.5rem 4rem;
 }
 #main-content {
     display: flex;
@@ -132,7 +135,7 @@ button {
 p {
     text-indent: 2rem;
     text-align: left;
-    max-width: 720px;
+    max-width: 700px;
     line-height: 140%;
 }
 h1, h2, h3, h4, h5, h6, p {
@@ -236,7 +239,7 @@ h1, .h1 {
 
 /* Project grid */
 .projects {
-    width: calc(100% - 4rem);
+    width: calc(95% - 2rem);
     max-width: 1400px;
     margin: 0 auto;
 }
