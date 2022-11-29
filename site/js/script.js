@@ -2,6 +2,7 @@ const PAGE_TITLE_BASE = "akassis.dev";
 const NAV_SECTIONS = ["home", "about", "projects", "courses", "contact"];
 const body = document.querySelector("body");
 const contentDiv = document.getElementById("main-content");
+const navExpand = document.getElementById("nav-expand");
 
 /* Dark mode */
 // Get dark mode preference
@@ -40,6 +41,7 @@ for (section of NAV_SECTIONS) {
         let sectionName = event.target.closest("a").name;
         loadFragment(`content/${sectionName}.html`, sectionName);
         setActive(this.name);
+        navExpand.checked = false;
     })
 }
 
