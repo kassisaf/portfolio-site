@@ -254,6 +254,9 @@ td {
 thead td {
     padding-bottom: 10px;
 }
+.data-tables tr:nth-of-type(even) td {
+    background-color: var(--gray-20);
+}
 
 /* Contact form */
 form, input, label:not([role=button]) {
@@ -326,8 +329,10 @@ input:focus {
         max-width: 100%;
         margin: 0 auto;
     }
-
     .projects {
         width: 100%;
+    }
+    .data-tables td:nth-of-type(3), .data-tables td:nth-of-type(5) {
+        display: none;  
     }
 }
