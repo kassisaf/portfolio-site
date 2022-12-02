@@ -249,10 +249,10 @@ thead {
     font-weight: bold;
 }
 td {
-    padding: 4px 12px;
+    padding: 6px 13px;
 }
-thead td {
-    padding-bottom: 10px;
+.data-tables thead tr:nth-of-type(2) td {
+    background-color: var(--gray-40);
 }
 .data-tables tr:nth-of-type(even) td {
     background-color: var(--gray-20);
