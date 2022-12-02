@@ -47,7 +47,7 @@ body {
     background-color: var(--gray-0);
     color: var(--gray-100);
 }
-body, button, input, select {
+body, button, input, textarea, select {
     font-family: 'Epilogue', Arial, sans-serif;
 }
 #page-border {
@@ -170,8 +170,14 @@ h1, .h1 {
     margin: 0 auto;
     align-self: center;
 }
-.left {
-    align-self: left;
+.flex {
+    display: flex;
+}
+.flex.left {
+    align-items: flex-start;
+}
+.flex.right {
+    align-items: flex-end;
 }
 .column {
     display: flex;
@@ -209,8 +215,15 @@ h1, .h1 {
     padding-top: 14px;
 }
 #dark-mode-icon {
-    color: var(--gray-80);
     fill: none !important;
+    stroke-width: 2.5;
+    height: 24px;
+}
+#hamburger-icon {
+    fill: none !important;
+    stroke-width: 2.1;
+    height: 30px;
+    margin-top: 5px;
 }
 .icon {
     color: var(--gray-80);
@@ -279,24 +292,37 @@ td {
 }
 
 /* Contact form */
-form, input, label:not([role=button]) {
+form, input, textarea {
     width: 100%;
     max-width: 700px;
 }
-input {
+input, textarea {
     margin: 2px 0 1rem 0;
     display: block;
     border: 2px solid var(--gray-80);
     background-color: var(--gray-20);
     color: var(--gray-100);
     padding: 8px 10px;
-}
-input[type=textarea] {
-    
+    width: 100%;
+    font-size: 16px;
 }
 input:focus {
     border-color: var(--violet);
     border: 2px solid var(--violet);
+}
+textarea {
+    resize: vertical;
+}
+#name-field {
+    margin-right: 0.5rem;
+    width: 50%;
+}
+#email-field {
+    margin-left: 0.5rem;
+    width: 50%;
+}
+label {
+    line-height: 1.5rem;
 }
 
 /* Navburger */
@@ -307,8 +333,6 @@ input:focus {
     float: right;
     cursor: pointer;
     display: none;
-    padding: 1rem 0;
-    margin: 0 0.5rem;
 }
 #top-spacer {
     position: fixed;
@@ -363,5 +387,8 @@ input:focus {
     }
     .data-tables td:nth-of-type(3), .data-tables td:nth-of-type(5) {
         display: none;  
+    }
+    #dark-mode-btn:hover {
+        background: none;
     }
 }
