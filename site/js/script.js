@@ -76,5 +76,5 @@ function setActive(targetSection) {
 }
 
 // Get home content on page load
-// loadFragment("content/home.html", "home");
-loadFragment("content/courses.html");
+loadFragment("content/home.html", "home");
+// loadFragment("content/courses.html");
