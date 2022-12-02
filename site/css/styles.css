@@ -59,7 +59,7 @@ body, button, input, select {
     position: relative;
     display: flex;
     flex-direction: column;
-    z-index: 1;
+    z-index: 99;
 }
 nav, footer {
     display: flex;
@@ -70,37 +70,39 @@ nav, footer {
 nav {
     justify-content: flex-end;
     user-select: none;
-    z-index: 5;
 }
-nav * {
+nav, nav * {
     z-index: 10;
 }
-#logo {
+#logo a {
     position: absolute;
     left: 0;
-    top: 0;
-    font-size: 3.5rem;
-    font-family: 'Condiment', Arial, sans-serif;
-    height: 3rem;
-}
-#logo a {
+    top: 1.5rem;
     background: none;
-    padding: 0 1rem;
     vertical-align: bottom;
+    font-family: 'Condiment', Arial, sans-serif;
+    font-size: 3.5rem;
 }
-nav a {
-    padding: 0.5rem 0.8rem;
-    line-height: 3rem;
-    transition: background-color 150ms;
+nav button {
+    background: none;
 }
 nav a:hover, nav *.active, button:hover:not([disabled]) {
     background-color: var(--gray-40);
     transition: background-color 200ms;
     text-decoration: none;
+    cursor: pointer;
 }
-nav ul li, nav ul a {
+nav ul, nav ul li, nav ul a {
     display: inline-block;
-    z-index: 99;
+}
+nav ul {
+    font-size: 0;
+}
+nav a {
+    padding: 0.5rem 0.8rem;
+    line-height: 3rem;
+    transition: background-color 150ms;
+    font-size: 1rem;
 }
 main {
     display: flex;
@@ -137,13 +139,18 @@ a:hover {
     text-decoration: underline;
 }
 button {
-    color: var(--indigo);
     background: none;
     border: none;
-    cursor: pointer;
     font-size: 1rem;
     line-height: 3rem;
     padding: 0 0.8rem;
+    background-color: var(--gray-40);
+    color: var(--gray-100);
+}
+button[disabled] {
+    background-color: var(--gray-20);
+    color: var(--gray-60);
+    font-style: oblique;
 }
 p {
     text-indent: 2rem;
@@ -242,6 +249,9 @@ svg.info {
     border-radius: 9px;
     background-color: var(--gray-40);
     height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Courses table */
@@ -318,8 +328,8 @@ input:focus {
         left: var(--page-border-size);
         width: calc(100% - var(--page-border-size) * 2);
         text-align: center;
-        z-index: 5;
         transition: 250ms;
+        z-index: 5;
     }
     nav ul li, nav ul li a {
         display: block;
@@ -330,7 +340,7 @@ input:focus {
     }
     #nav-expand:checked ~ ul {
         top: 5.3rem;
-        box-shadow: 0px 12px 12px #00000055;
+        box-shadow: 0px 8px 8px #00000055;
     }
     .about-pic {
         float: none;
