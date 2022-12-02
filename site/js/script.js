@@ -75,6 +75,14 @@ function setActive(targetSection) {
     document.getElementById(`nav-${targetSection}`).classList.add("active");
 }
 
-// Get home content on page load
-loadFragment("content/home.html", "home");
-// loadFragment("content/courses.html");
+// Loads the fragment specified by anchor tag, else loads homepage fragment
+function getPageByAnchor() {
+    let anchor = window.location.hash.replace("#", "");
+    if (!NAV_SECTIONS.includes(anchor)) {
+        anchor = "home";
+    }
+    loadFragment(`content/${anchor}.html`, anchor);
+}
+
+/* Execute once on page load */
+getPageByAnchor();
