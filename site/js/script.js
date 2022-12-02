@@ -40,13 +40,12 @@ document.getElementById("dark-mode-btn").addEventListener("click", toggleDarkMod
 
 
 /* SPA fetch mechanism */
-// Use name of clicked nav button to fetch matching fragment
+// Event listener for nav links uses name of clicked element to fetch matching fragment
 for (section of NAV_SECTIONS) {
     const navLink = document.getElementById(`nav-${section}`);
     navLink.addEventListener("click", function(event) {
         let sectionName = event.target.closest("a").name;
         loadFragment(`content/${sectionName}.html`, sectionName);
-        setActive(this.name);
         navExpand.checked = false;
     })
 }
@@ -64,8 +63,9 @@ async function loadFragment(fragmentPath, title) {
         var newTitle = PAGE_TITLE_BASE;
         title = "";
     }
-    document.title = newTitle;
-    history.pushState(null, "", `#${title}`);
+    setActive(title);                          // Set nav button style
+    document.title = newTitle;                 // Set page title
+    history.pushState(null, "", `#${title}`);  // Add to browser history
 }
 
 function setActive(targetSection) {
