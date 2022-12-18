@@ -88,28 +88,43 @@ function loadFragmentFromAnchor() {
 
 /* Modal logic */
 function showModal(modalId) {
-    document.getElementById(modalId).classList.add("active");
+    const modal = document.getElementById(modalId);
+    modal.classList.add("active");
+    body.ariaHidden = "true";
+    modal.ariaHidden = "false";
 }
 function hideModal(modalId) {
-    document.getElementById(modalId).classList.remove("active");
+    const modal = document.getElementById(modalId);
+    modal.classList.remove("active");
+    body.ariaHidden = "false";
+    modal.ariaHidden = "true";
 }
 function createModalListeners() {
-    for (modal of document.getElementsByClassName("modal")) {
+    // Add event listeners to modal buttons
+    Array.from(document.getElementsByClassName("modal")).forEach(modal => {
+        modal.ariaHidden = "true";  // Hide from screen readers until shown
         const modalBtn = document.getElementById(`modal-btn-${modal.id}`);
         const modalClose = document.getElementById(`modal-close-${modal.id}`);
-        modalBtn.addEventListener("click", function() {
-            showModal(modal.id);
-        });
-        modalClose.addEventListener("click", function() {
-            hideModal(modal.id);
-        });
-    }
-    // Close modal if clicked outside of modal
+        if (modalBtn) {
+            modalBtn.addEventListener("click", function() {
+                showModal(modal.id);
+            });
+        }
+        if (modalClose) {
+            modalClose.addEventListener("click", function() {
+                hideModal(modal.id);
+            });
+        }
+    });
+    // Close modal when clicking outside
     body.addEventListener("click", function(event) {
         const activeModal = document.querySelector(".modal.active");
         const closestModal = event.target.closest(".modal");
-        if (activeModal && closestModal != activeModal && event.target.id != `modal-btn-${activeModal.id}`) {
-            hideModal(activeModal.id);
+        console.log(`activeModal: ${activeModal}, closestModal: ${closestModal}, event.target.id: ${event.target.id}`);
+        if (activeModal
+            && closestModal != activeModal
+            && event.target.id != `modal-btn-${activeModal.id}`) {
+                hideModal(activeModal.id);
         };
     });
 }

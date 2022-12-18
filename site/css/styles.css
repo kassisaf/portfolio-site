@@ -9,6 +9,7 @@
 :root {
     --page-border-size: 7px;
     --inner-border-size: 5px;
+    --modal-width: 600px;
     /* base16 Tomorrow */
     --gray-100: #272727;
     --gray-80: #60605f;
@@ -67,7 +68,6 @@ nav, footer {
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
-    padding-right: 5rem;
 }
 nav {
     justify-content: flex-end;
@@ -422,22 +422,22 @@ label {
 .modal {
     position: absolute;
     background: var(--gray-20);
-    width: 500px;
-    height: 600px;
-    top: 20%;
-    left: calc(50% - 250px);
+    top: 10%;
+    left: calc(50% - (var(--modal-width) / 2));
     border: var(--inner-border-size) solid var(--gray-40);
-    padding: 1.5rem;
+    padding: 2.25rem 2rem 1.5rem;
     z-index: 10;
-    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
-
-    transition: 300ms;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
     opacity: 0;
+    max-width: var(--modal-width);
     height: 0;
+    visibility: hidden;
+    transition: 200ms ease-in-out;
 }
 .modal.active {
     opacity: 1;
-    height: 600px;
+    height: auto;
+    visibility: visible;
 }
 .close {
     position: absolute;
@@ -447,15 +447,5 @@ label {
     cursor: pointer;
     font-size: 3.5rem;
     color: var(--gray-60);
+    background: none;
 }
-
-/* div {
-    transition: opacity 1s ease-out;
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-}
-div.active {
-    opacity: 1;
-    height: auto;
-} */
