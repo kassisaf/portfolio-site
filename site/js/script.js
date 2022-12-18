@@ -99,6 +99,11 @@ function hideModal(modalId) {
     body.ariaHidden = "false";
     modal.ariaHidden = "true";
 }
+function hideAllModals() {
+    Array.from(document.querySelectorAll(".modal.active")).forEach(modal => {
+        hideModal(modal.id);
+    });
+}
 function createModalListeners() {
     // Add event listeners to modal buttons
     Array.from(document.getElementsByClassName("modal")).forEach(modal => {
@@ -107,6 +112,7 @@ function createModalListeners() {
         const modalClose = document.getElementById(`modal-close-${modal.id}`);
         if (modalBtn) {
             modalBtn.addEventListener("click", function() {
+                hideAllModals();
                 showModal(modal.id);
             });
         }
@@ -119,11 +125,10 @@ function createModalListeners() {
     // Close modal when clicking outside
     body.addEventListener("click", function(event) {
         const activeModal = document.querySelector(".modal.active");
-        const closestModal = event.target.closest(".modal");
-        console.log(`activeModal: ${activeModal}, closestModal: ${closestModal}, event.target.id: ${event.target.id}`);
-        if (activeModal
-            && closestModal != activeModal
-            && event.target.id != `modal-btn-${activeModal.id}`) {
+        if (activeModal                                           // If a modal is active
+            && event.target.closest(".modal") != activeModal      // And the click was not on the active modal
+            && event.target.id != `modal-btn-${activeModal.id}`)  // And the click was not on the active modal's button
+        {
                 hideModal(activeModal.id);
         };
     });

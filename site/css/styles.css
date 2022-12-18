@@ -9,7 +9,7 @@
 :root {
     --page-border-size: 7px;
     --inner-border-size: 5px;
-    --modal-width: 600px;
+    --modal-width: 650px;
     /* base16 Tomorrow */
     --gray-100: #272727;
     --gray-80: #60605f;
@@ -420,23 +420,25 @@ label {
 
 /* Modal */
 .modal {
-    position: absolute;
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background: var(--gray-20);
-    top: 10%;
-    left: calc(50% - (var(--modal-width) / 2));
     border: var(--inner-border-size) solid var(--gray-40);
     padding: 2.25rem 2rem 1.5rem;
     z-index: 10;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
     opacity: 0;
-    max-width: var(--modal-width);
-    height: 0;
+    width: var(--modal-width);
+    max-width: 95%;
+    height: auto;
     visibility: hidden;
-    transition: 200ms ease-in-out;
+    transition: 300ms ease-in-out;
 }
 .modal.active {
+    top: 33%;
     opacity: 1;
-    height: auto;
     visibility: visible;
 }
 .close {
@@ -447,5 +449,9 @@ label {
     cursor: pointer;
     font-size: 3.5rem;
     color: var(--gray-60);
-    background: none;
+}
+@media (prefers-reduced-motion) {
+    .modal {
+        transition: none;
+    }
 }
