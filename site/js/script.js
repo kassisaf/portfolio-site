@@ -104,6 +104,14 @@ function createModalListeners() {
             hideModal(modal.id);
         });
     }
+    // Close modal if clicked outside of modal
+    body.addEventListener("click", function(event) {
+        const activeModal = document.querySelector(".modal.active");
+        const closestModal = event.target.closest(".modal");
+        if (activeModal && closestModal != activeModal && event.target.id != `modal-btn-${activeModal.id}`) {
+            hideModal(activeModal.id);
+        };
+    });
 }
 
 /* Execute once on page load */
