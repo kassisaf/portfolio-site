@@ -199,6 +199,15 @@ h1, .h1 {
 .w-100 {
     width: 100%;
 }
+.link {
+    background: none !important;
+    color: var(--indigo);
+    padding: 0;
+    line-height: normal;
+}
+.link:hover {
+    text-decoration: underline !important;
+}
 
 /* Specific components */
 .about-pic {
