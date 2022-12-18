@@ -66,6 +66,8 @@ async function loadFragment(fragmentPath, title) {
     setActive(title);                          // Set nav button style
     document.title = newTitle;                 // Set page title
     history.pushState(null, "", `#${title}`);  // Add to browser history
+
+    createModalListeners();
 }
 
 function setActive(targetSection) {
@@ -76,7 +78,7 @@ function setActive(targetSection) {
 }
 
 // Loads the fragment specified by anchor tag, else loads homepage fragment
-function getPageByAnchor() {
+function loadFragmentFromAnchor() {
     let anchor = window.location.hash.replace("#", "");
     if (!NAV_SECTIONS.includes(anchor)) {
         anchor = "home";
@@ -84,5 +86,25 @@ function getPageByAnchor() {
     loadFragment(`content/${anchor}.html`, anchor);
 }
 
+/* Modal logic */
+function showModal(modalId) {
+    document.getElementById(modalId).classList.add("active");
+}
+function hideModal(modalId) {
+    document.getElementById(modalId).classList.remove("active");
+}
+function createModalListeners() {
+    for (modal of document.getElementsByClassName("modal")) {
+        const modalBtn = document.getElementById(`modal-btn-${modal.id}`);
+        const modalClose = document.getElementById(`modal-close-${modal.id}`);
+        modalBtn.addEventListener("click", function() {
+            showModal(modal.id);
+        });
+        modalClose.addEventListener("click", function() {
+            hideModal(modal.id);
+        });
+    }
+}
+
 /* Execute once on page load */
-getPageByAnchor();
+loadFragmentFromAnchor();

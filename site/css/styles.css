@@ -8,6 +8,7 @@
 }
 :root {
     --page-border-size: 7px;
+    --inner-border-size: 5px;
     /* base16 Tomorrow */
     --gray-100: #272727;
     --gray-80: #60605f;
@@ -66,6 +67,7 @@ nav, footer {
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
+    padding-right: 5rem;
 }
 nav {
     justify-content: flex-end;
@@ -187,6 +189,9 @@ h1, .h1 {
 .indent {
     text-indent: 2rem;
 }
+.italic {
+    font-style: italic;
+}
 .text-center {
     text-align: center;
 }
@@ -214,7 +219,7 @@ h1, .h1 {
     max-width: 450px;
     height: auto;
     box-shadow: 2px 4px 11px #00000066;
-    border: 4px solid white;
+    border: var(--inner-border-size) solid white;
     float: left;
     margin: 0 1.5rem 1rem 0;
     transition: 90ms;
@@ -251,9 +256,6 @@ svg.info {
     offset-position: 50px 0;
 }
 
-/* Tooltips */
-
-
 /* Project grid */
 .projects {
     width: 90%;
@@ -267,9 +269,8 @@ svg.info {
     grid-auto-flow: dense;
 }
 .project-card {
-    border: 3px solid var(--gray-80);
-    border-radius: 9px;
-    background-color: var(--gray-40);
+    border: var(--inner-border-size) solid var(--gray-40);
+    background-color: var(--gray-20);
     height: 200px;
     display: flex;
     justify-content: center;
@@ -308,7 +309,7 @@ form, input, textarea {
 input, textarea {
     margin: 2px 0 1rem 0;
     display: block;
-    border: 2px solid var(--gray-80);
+    border: 4px solid var(--gray-40);
     background-color: var(--gray-20);
     color: var(--gray-100);
     padding: 8px 10px;
@@ -384,7 +385,7 @@ label {
     }
     #nav-expand:checked ~ ul {
         top: 5.3rem;
-        box-shadow: 0px 8px 8px #00000055;
+        box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5);
     }
     .about-pic {
         float: none;
@@ -401,3 +402,45 @@ label {
         background: none;
     }
 }
+
+/* Modal */
+.modal {
+    position: absolute;
+    background: var(--gray-20);
+    width: 500px;
+    height: 600px;
+    top: 20%;
+    left: calc(50% - 250px);
+    border: var(--inner-border-size) solid var(--gray-40);
+    padding: 1.5rem;
+    z-index: 10;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5);
+
+    transition: 300ms;
+    opacity: 0;
+    height: 0;
+}
+.modal.active {
+    opacity: 1;
+    height: 600px;
+}
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 0.5rem;
+    cursor: pointer;
+    font-size: 3.5rem;
+    color: var(--gray-60);
+}
+
+/* div {
+    transition: opacity 1s ease-out;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+div.active {
+    opacity: 1;
+    height: auto;
+} */
