@@ -1,5 +1,6 @@
 const PAGE_TITLE_BASE = "akassis.dev";
 const NAV_SECTIONS = ["home", "about", "projects", "courses", "contact"];
+const DEFAULT_SECTION = "home";
 const body = document.querySelector("body");
 const contentDiv = document.getElementById("main-content");
 const navExpand = document.getElementById("nav-expand");
@@ -81,7 +82,7 @@ function setActive(targetSection) {
 function loadFragmentFromAnchor() {
     let anchor = window.location.hash.replace("#", "");
     if (!NAV_SECTIONS.includes(anchor)) {
-        anchor = "home";
+        anchor = DEFAULT_SECTION;
     }
     loadFragment(`content/${anchor}.html`, anchor);
 }
@@ -89,15 +90,21 @@ function loadFragmentFromAnchor() {
 /* Modal logic */
 function showModal(modalId) {
     const modal = document.getElementById(modalId);
+    const modalHeading = document.querySelector(`#${modalId} h3`);
     modal.classList.add("active");
     body.ariaHidden = "true";
     modal.ariaHidden = "false";
+    modalHeading.focus();
+    modalHeading.tabIndex = 0;
 }
 function hideModal(modalId) {
     const modal = document.getElementById(modalId);
+    const modalBtn = document.getElementById(`modal-btn-${modalId}`);
     modal.classList.remove("active");
     body.ariaHidden = "false";
     modal.ariaHidden = "true";
+    modalBtn.focus();
+    modalBtn.tabIndex = 0;
 }
 function hideAllModals() {
     Array.from(document.querySelectorAll(".modal.active")).forEach(modal => {

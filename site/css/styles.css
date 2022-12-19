@@ -22,7 +22,8 @@
     --yellow: #efc200;
     --green: #839b00;
     --blue: #4ba8af;
-    --indigo: #5286bc;
+    /* --indigo: #5286bc; */
+    --indigo: #4579B0;
     --violet: #9c71b7;
 }
 .dark {
@@ -90,6 +91,7 @@ nav button {
 }
 nav a:hover, nav *.active, button:hover:not([disabled]) {
     background-color: var(--gray-40);
+    color: var(--gray-80);
     transition: background-color 200ms;
     text-decoration: none;
     cursor: pointer;
@@ -122,8 +124,9 @@ footer {
     align-items: center;
     width: 100%;
     background-color: var(--gray-20);
-    color: var(--gray-60);
+    color: var(--gray-80);
     padding: 0.5rem;
+    padding-right: 1rem;
     position: absolute;
     bottom: 0;
 }
