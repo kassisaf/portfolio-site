@@ -2,6 +2,7 @@ const PAGE_TITLE_BASE = "akassis.dev";
 const NAV_SECTIONS = ["about", "projects", "courses", "contact"];
 const DEFAULT_SECTION = "about";
 const body = document.querySelector("body");
+const overlay = document.getElementById("overlay");
 const contentDiv = document.getElementById("main-content");
 const navExpand = document.getElementById("nav-expand");
 
@@ -97,6 +98,8 @@ function showModal(modalId) {
     const modal = document.getElementById(modalId);
     const modalHeading = document.querySelector(`#${modalId} h3`);
     modal.classList.add("active");
+    overlay.classList.add("active");
+    // Accessibility
     body.ariaHidden = "true";
     modal.ariaHidden = "false";
     modalHeading.focus();
@@ -106,6 +109,8 @@ function hideModal(modalId) {
     const modal = document.getElementById(modalId);
     const modalBtn = document.getElementById(`modal-btn-${modalId}`);
     modal.classList.remove("active");
+    overlay.classList.remove("active");
+    // Accessibility
     body.ariaHidden = "false";
     modal.ariaHidden = "true";
     modalBtn.focus();

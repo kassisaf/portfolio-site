@@ -61,7 +61,7 @@ body, button, input, textarea, select {
     position: relative;
     display: flex;
     flex-direction: column;
-    z-index: 99;
+    z-index: 50;
 }
 nav, footer {
     display: flex;
@@ -73,7 +73,7 @@ nav {
     justify-content: flex-end;
     user-select: none;
 }
-nav, nav * {
+nav, nav *, footer {
     z-index: 10;
 }
 #logo {
@@ -111,7 +111,6 @@ main {
     display: flex;
     justify-content: center;
     padding: 3.5rem 1.5rem 4rem;
-    z-index: -1;
 }
 #main-content {
     display: flex;
@@ -417,7 +416,7 @@ label {
         width: 100%;
     }
     .data-tables td:nth-of-type(3), .data-tables td:nth-of-type(5) {
-        display: none;  
+        display: none;
     }
     #dark-mode-btn:hover {
         background: none;
@@ -427,13 +426,13 @@ label {
 /* Modal */
 .modal {
     position: fixed;
-    top: 15%;
+    top: 17%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: var(--gray-20);
     border: var(--inner-border-size) solid var(--gray-40);
     padding: 2.25rem 2rem 1.5rem;
-    z-index: 10;
+    z-index: 90;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
     opacity: 0;
     width: var(--modal-width);
@@ -462,6 +461,22 @@ label {
 .modal ul li {
     padding: 0.25rem 0;
     margin-left: 0.5rem;
+}
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0, 0, 0, 0.5);
+    z-index: 80;
+    opacity: 0;
+    visibility: hidden;
+    transition: 300ms ease-in-out;
+}
+#overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Accessibility */
