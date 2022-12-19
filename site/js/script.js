@@ -1,6 +1,6 @@
 const PAGE_TITLE_BASE = "akassis.dev";
-const NAV_SECTIONS = ["home", "about", "projects", "courses", "contact"];
-const DEFAULT_SECTION = "home";
+const NAV_SECTIONS = ["about", "projects", "courses", "contact"];
+const DEFAULT_SECTION = "about";
 const body = document.querySelector("body");
 const contentDiv = document.getElementById("main-content");
 const navExpand = document.getElementById("nav-expand");
@@ -56,6 +56,7 @@ async function fetchHtmlAsText(url) {
 }
 
 async function loadFragment(fragmentPath, title) {
+    // Fetch fragment and render in main div
     contentDiv.innerHTML = await fetchHtmlAsText(`fragments/${fragmentPath}`);
     if (title) {
         var newTitle = `${title} - ${PAGE_TITLE_BASE}`;
@@ -67,6 +68,10 @@ async function loadFragment(fragmentPath, title) {
     setActive(title);                          // Set nav button style
     document.title = newTitle;                 // Set page title
     history.pushState(null, "", `#${title}`);  // Add to browser history
+    // Set focus to section header
+    const sectionHeader = document.getElementById("section-header");
+    sectionHeader.focus();
+    sectionHeader.tabIndex = 0;
 
     createModalListeners();
 }

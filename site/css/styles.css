@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
-    list-style: none;
     box-sizing: border-box;
 }
 :root {
@@ -77,10 +76,10 @@ nav {
 nav, nav * {
     z-index: 10;
 }
-#logo a {
+#logo {
     position: absolute;
-    left: 0;
-    top: 1.5rem;
+    left: 0.8rem;
+    top: 0.6rem;
     background: none;
     vertical-align: bottom;
     font-family: 'Condiment', Arial, sans-serif;
@@ -133,6 +132,9 @@ footer {
 footer ul {
     display: flex;
     align-items: center;
+}
+ul {
+    list-style: none;
 }
 
 /* General styling */
@@ -211,7 +213,7 @@ h6, .h6 {
     font-style: italic;
 }
 .text-center {
-    text-align: center;
+    text-align: center !important;
 }
 .red {
     color: var(--red);
@@ -222,11 +224,12 @@ h6, .h6 {
 .w-100 {
     width: 100%;
 }
-.link {
+button.link {
     background: none !important;
     color: var(--indigo);
     padding: 0;
     line-height: normal;
+    text-align: left;
 }
 .link:hover {
     text-decoration: underline !important;
@@ -453,8 +456,17 @@ label {
     font-size: 3.5rem;
     color: var(--gray-60);
 }
+.modal ul {
+    list-style: inside;
+}
+.modal ul li {
+    padding: 0.25rem 0;
+    margin-left: 0.5rem;
+}
+
+/* Accessibility */
 @media (prefers-reduced-motion) {
-    .modal {
+    .modal, nav ul {
         transition: none;
     }
 }
