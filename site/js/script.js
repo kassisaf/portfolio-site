@@ -175,10 +175,16 @@ function createProjectLinkListeners() {
                 projectDetails.classList.add("project-details");
                 projectDetails.style.gridColumn = `span ${currentColumnCount}`;
                 projectDetails.innerHTML = `<h3>Project Details Here</h3>`; // TODO replace with actual project data
+                destroyProjectDetails();
                 currentProjectListItem.insertAdjacentElement("afterend", projectDetails);
             }
         });
     });
+}
+function destroyProjectDetails() {
+    for (projectDetails of document.getElementsByClassName("project-details")) {
+        projectDetails.remove();
+    }
 }
 
 /* Execute once on page load */
