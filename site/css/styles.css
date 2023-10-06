@@ -214,6 +214,9 @@ h6, .h6 {
 .italic {
     font-style: italic;
 }
+.bold {
+    font-weight: bold;
+}
 .text-center {
     text-align: center !important;
 }
@@ -235,6 +238,9 @@ button.link {
 }
 .link:hover {
     text-decoration: underline !important;
+}
+.small-text {
+    font-size: 0.75rem;
 }
 
 /* Specific components */
@@ -505,20 +511,20 @@ label {
 .tooltip .tooltiptext::after {
     content: " ";
     position: absolute;
-    top: 20%;
+    top: 15%;
     right: 100%; /* To the left of the tooltip */
     margin-top: -5px;
     border-width: 6px;
     border-style: solid;
     border-color: transparent var(--gray-20) transparent transparent;
 }
-.tooltiptext span {
-    font-weight: bold;
-}
 .tooltiptext ul {
     list-style-type: disc;
     margin-top: 0.5em;
     margin-left: 1.25em;
+}
+.tooltiptext li {
+    margin-top: 0.5em;
 }
 
 
