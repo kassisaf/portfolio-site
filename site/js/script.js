@@ -73,9 +73,16 @@ async function loadFragment(fragmentPath, title) {
     const sectionHeader = document.getElementById("section-header");
     sectionHeader.focus();
     sectionHeader.tabIndex = 0;
-
-    createModalListeners();
-    createProjectLinkListeners();
+    // Run section-specific setup
+    switch (title) {
+        case "courses":
+            createModalListeners();
+            break;
+        case "projects":
+            createProjectLinkListeners();
+            break;
+        default:
+    }
 }
 
 function setActive(targetSection) {
