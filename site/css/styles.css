@@ -308,6 +308,7 @@ svg.info {
 /* Courses table */
 .data-tables {
     overflow-x: auto;
+    width: 100%;
 }
 table {
     display: table;
@@ -380,56 +381,6 @@ label {
     background-color: var(--gray-40);
     display: none;
 }
-@media (max-width: 650px) {
-    #top-spacer {
-        display: block;
-    }
-    #hamburger {
-        display: block;
-    }
-    nav, nav ul {
-        position: fixed;
-        background-color: var(--gray-20);
-        align-items: center;
-    }
-    nav {
-        height: 5.3rem;
-        width: calc(100% - var(--page-border-size) * 2);
-    }
-    nav ul {
-        top: -12rem;
-        left: var(--page-border-size);
-        width: calc(100% - var(--page-border-size) * 2);
-        text-align: center;
-        transition: var(--animation-slow);
-        z-index: 5;
-    }
-    nav ul li, nav ul li a {
-        display: block;
-        padding: 0;
-    }
-    main {
-        margin-top: 3rem;
-    }
-    #nav-expand:checked ~ ul {
-        top: 5.3rem;
-        box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5);
-    }
-    .about-pic {
-        float: none;
-        max-width: 100%;
-        margin: 0 auto;
-    }
-    .projects {
-        width: 100%;
-    }
-    .data-tables td:nth-of-type(3), .data-tables td:nth-of-type(5) {
-        display: none;
-    }
-    #dark-mode-btn:hover {
-        background: none;
-    }
-}
 
 /* Modal */
 .modal {
@@ -443,6 +394,7 @@ label {
     z-index: 90;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
     opacity: 0;
+    min-width: 360px;
     width: var(--modal-width);
     max-width: 95%;
     height: auto;
@@ -487,15 +439,14 @@ label {
     visibility: visible;
 }
 
-/* Tooltip container */
+/* Tooltip */
 .tooltip {
     position: relative;
     display: inline-block;
 }
-/* Tooltip text */
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 250px;
+    width: 244px;
     background-color: var(--gray-20);
     color: var(--gray-80);
     text-align: left;
@@ -505,19 +456,23 @@ label {
     position: absolute;
     z-index: 1;
     top: -8px;
-    left: 135%;
+    left: 140%;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 /* Tooltip arrow */
 .tooltip .tooltiptext::after {
     content: " ";
     position: absolute;
-    top: 15%;
-    right: 100%; /* To the left of the tooltip */
-    margin-top: -5px;
     border-width: 6px;
     border-style: solid;
     border-color: transparent var(--gray-20) transparent transparent;
+    top: 13%;
+    right: 100%;
+    margin-top: -5px;
 }
+/* Other tooltip styling */
 .tooltiptext ul {
     list-style-type: disc;
     margin-top: 0.5em;
@@ -527,10 +482,57 @@ label {
     margin-top: 0.5em;
 }
 
-
-/* Show the tooltip text when you mouse over the tooltip container */
-    .tooltip:hover .tooltiptext {
-    visibility: visible;
+/* Smallest breakpoint */
+@media (max-width: 650px) {
+    #top-spacer {
+        display: block;
+    }
+    #hamburger {
+        display: block;
+    }
+    nav, nav ul {
+        position: fixed;
+        background-color: var(--gray-20);
+        align-items: center;
+    }
+    nav {
+        height: 5.3rem;
+        width: calc(100% - var(--page-border-size) * 2);
+    }
+    nav ul {
+        top: -12rem;
+        left: var(--page-border-size);
+        width: calc(100% - var(--page-border-size) * 2);
+        text-align: center;
+        transition: var(--animation-slow);
+        z-index: 5;
+    }
+    nav ul li, nav ul li a {
+        display: block;
+        padding: 0;
+    }
+    main {
+        margin-top: 3rem;
+    }
+    #nav-expand:checked ~ ul {
+        top: 5.3rem;
+        box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5);
+    }
+    .about-pic {
+        float: none;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .projects {
+        width: 100%;
+    }
+    /* Hide semester and unit columns */
+    .data-tables td:nth-of-type(3), .data-tables td:nth-of-type(5) {
+        display: none;
+    }
+    #dark-mode-btn:hover {
+        background: none;
+    }
 }
 
 /* Accessibility */
