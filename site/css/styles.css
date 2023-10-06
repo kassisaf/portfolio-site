@@ -9,8 +9,8 @@
     --page-border-size: 7px;
     --inner-border-size: 5px;
     --modal-width: 650px;
-    --animation-slow: 250ms;
-    --animation-fast: 150ms;
+    --animation-slow: 160ms;
+    --animation-fast: 80ms;
     /* base16 Tomorrow */
     --gray-100: #272727;
     --gray-80: #60605f;
@@ -162,8 +162,8 @@ button[disabled] {
 }
 p {
     text-indent: 2rem;
-    text-align: left;
-    max-width: 700px;
+    text-align: justify;
+    max-width: 800px;
     line-height: 140%;
 }
 h1, h2, h3, h4, h5, h6, p {
