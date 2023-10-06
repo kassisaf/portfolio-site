@@ -163,19 +163,23 @@ function createModalListeners() {
 function createProjectLinkListeners() {
     Array.from(document.querySelectorAll(".project-card button.link")).forEach(projectButton => {
         projectButton.addEventListener("click", function(event) {
-            projectID = event.target.attributes["project-id"];
+            projectID = event.currentTarget.attributes["project-id"];
             if (projectID != undefined) {
                 // console.log(projectID.value);
                 currentProjectListItem = event.target.parentNode.parentNode;
                 projectList = currentProjectListItem.parentNode;
                 currentColumnCount = getGridElementColumnCount(projectList);
 
+                // Destroy any existing project details
+                for (projectDetails of document.getElementsByClassName("project-details")) {
+                    projectDetails.remove();
+                }
+
                 // Construct a project details element and insert it after the current project card
                 projectDetails = document.createElement("li");
                 projectDetails.classList.add("project-details");
                 projectDetails.style.gridColumn = `span ${currentColumnCount}`;
-                projectDetails.innerHTML = `<h3>Project Details Here</h3>`; // TODO replace with actual project data
-                destroyProjectDetails();
+                projectDetails.innerHTML = `<h3>Project ${projectID.value} details Here</h3>`; // TODO replace with actual project data
                 currentProjectListItem.insertAdjacentElement("afterend", projectDetails);
 
                 // TODO loop through project cards and fade all except the selected one (disable? add class?)
@@ -185,6 +189,7 @@ function createProjectLinkListeners() {
     });
     /* On browser resize, update project details span if present*/
     window.addEventListener("resize", function() {
+        // TODO not performant, find a better way... observer on grid-template-columns?
         projectDetails = document.querySelector(".project-details");
         if (projectDetails != undefined) {
             projectDetails.style.gridColumn = `span 1`; // Shrink first for accurate column count
@@ -195,11 +200,6 @@ function createProjectLinkListeners() {
 }
 function getGridElementColumnCount(gridElement) {
     return window.getComputedStyle(gridElement).getPropertyValue("grid-template-columns").split(" ").length;
-}
-function destroyProjectDetails() {
-    for (projectDetails of document.getElementsByClassName("project-details")) {
-        projectDetails.remove();
-    }
 }
 
 /* Execute once on page load */
