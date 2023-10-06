@@ -308,6 +308,9 @@ svg.info {
     justify-content: center;
     align-items: center;
 }
+.project-details {
+	grid-column: span 5;
+}
 
 /* Courses table */
 table {

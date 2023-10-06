@@ -75,6 +75,7 @@ async function loadFragment(fragmentPath, title) {
     sectionHeader.tabIndex = 0;
 
     createModalListeners();
+    createProjectLinkListeners();
 }
 
 function setActive(targetSection) {
@@ -148,6 +149,28 @@ function createModalListeners() {
         {
                 hideModal(activeModal.id);
         };
+    });
+}
+
+/* Project loading mechanism */
+function createProjectLinkListeners() {
+    Array.from(document.querySelectorAll(".project-card button.link")).forEach(projectButton => {
+        projectButton.addEventListener("click", function(event) {
+            projectID = event.target.attributes["project-id"];
+            if (projectID != undefined) {
+                // console.log(projectID.value);
+                currentProjectListItem = event.target.parentNode.parentNode;
+                projectList = currentProjectListItem.parentNode;
+                currentColumnCount = window.getComputedStyle(projectList).getPropertyValue("grid-template-columns").split(" ").length;
+
+                // Construct a project details element and insert it after the current project card
+                projectDetails = document.createElement("li");
+                projectDetails.classList.add("project-details");
+                projectDetails.style.gridColumn = `span ${currentColumnCount}`;
+                projectDetails.innerHTML = `<h3>Project Details Here</h3>`; // TODO replace with actual project data
+                currentProjectListItem.insertAdjacentElement("afterend", projectDetails);
+            }
+        });
     });
 }
 
