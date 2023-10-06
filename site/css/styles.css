@@ -255,7 +255,7 @@ button.link[disabled] {
     border: var(--inner-border-size) solid white;
     float: left;
     margin: 0 1.5rem 1rem 0;
-    transition: var(--animation-fast);
+    transition: var(--animation-slow);
     display: block;
 }
 #dark-mode-btn {
@@ -546,7 +546,7 @@ label {
 
 /* Accessibility */
 @media (prefers-reduced-motion) {
-    .modal, nav ul, #overlay {
-        transition: none;
+    * {
+        transition: none !important;
     }
 }
