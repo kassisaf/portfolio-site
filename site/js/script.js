@@ -151,10 +151,5 @@ function createModalListeners() {
     });
 }
 
-
-/* Project row expand logic */
-
-
-
 /* Execute once on page load */
 loadFragmentFromAnchor();
