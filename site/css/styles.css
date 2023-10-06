@@ -306,10 +306,6 @@ svg.info {
 }
 
 /* Courses table */
-.data-tables {
-    overflow-x: auto;
-    width: 100%;
-}
 table {
     display: table;
     border-collapse: collapse;
@@ -322,6 +318,12 @@ thead {
 }
 td {
     padding: 6px 13px;
+}
+.data-tables {
+    overflow-x: auto;
+}
+.data-tables table {
+	width: 100%;
 }
 .data-tables thead tr td {
     background-color: var(--gray-40);
