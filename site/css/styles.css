@@ -236,6 +236,10 @@ button.link {
     line-height: normal;
     text-align: left;
 }
+button.link[disabled] {
+    text-decoration: none !important;
+	color: var(--gray-60)
+}
 .link:hover {
     text-decoration: underline !important;
 }
