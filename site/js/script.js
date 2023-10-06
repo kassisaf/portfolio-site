@@ -47,7 +47,7 @@ for (section of NAV_SECTIONS) {
     const navLink = document.getElementById(`nav-${section}`);
     navLink.addEventListener("click", function(event) {
         let sectionName = event.target.closest("a").name;
-        loadFragment(`content/${sectionName}.html`, sectionName);
+        loadSection(`sections/${sectionName}.html`, sectionName);
         navExpand.checked = false;
     })
 }
@@ -56,7 +56,7 @@ async function fetchHtmlAsText(url) {
     return await (await fetch(url)).text()
 }
 
-async function loadFragment(fragmentPath, title) {
+async function loadSection(fragmentPath, title) {
     // Fetch fragment and render in main div
     contentDiv.innerHTML = await fetchHtmlAsText(`fragments/${fragmentPath}`);
     if (title) {
@@ -93,12 +93,12 @@ function setActive(targetSection) {
 }
 
 // Loads the fragment specified by anchor tag, else loads homepage fragment
-function loadFragmentFromAnchor() {
+function loadSectionFromAnchor() {
     let anchor = window.location.hash.replace("#", "");
     if (!NAV_SECTIONS.includes(anchor)) {
         anchor = DEFAULT_SECTION;
     }
-    loadFragment(`content/${anchor}.html`, anchor);
+    loadSection(`sections/${anchor}.html`, anchor);
 }
 
 /* Modal logic */
@@ -203,4 +203,4 @@ function getGridElementColumnCount(gridElement) {
 }
 
 /* Execute once on page load */
-loadFragmentFromAnchor();
+loadSectionFromAnchor();
