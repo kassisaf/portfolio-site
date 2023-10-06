@@ -165,8 +165,9 @@ p {
     text-align: justify;
     max-width: 800px;
     line-height: 140%;
+    margin: 0.75rem 0;
 }
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6 {
     margin: 1rem 0;
 }
 h1, .h1 {
