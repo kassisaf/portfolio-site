@@ -9,8 +9,8 @@
     --page-border-size: 7px;
     --inner-border-size: 5px;
     --modal-width: 650px;
-    --animation-slow: 160ms;
-    --animation-fast: 80ms;
+    --animation-slow: 180ms;
+    --animation-fast: 90ms;
     /* base16 Tomorrow */
     --gray-100: #272727;
     --gray-80: #60605f;
