@@ -164,6 +164,7 @@ async function populateCourseList() {
     createModalListeners();
 }
 
+/* Project loading mechanism */
 async function populateProjectList() {
     projects = JSON.parse(await fetchHtmlAsText(`fragments/data/projects.json`));
     projectList = document.getElementById("project-list");
@@ -171,28 +172,43 @@ async function populateProjectList() {
         projectCard = document.createElement("li");
         projectCard.classList.add("project-card");
         projectCard.id = project.id;
-
+        // Image background div
         thumbnail = document.createElement("div");
         thumbnail.classList.add("thumbnail");
         thumbnail.style.backgroundImage = `url(../img/projects/thumbnails/${project.thumbnail})`;
-
+        // Title div
         title = document.createElement("div");
         title.classList.add("title");
         title.innerHTML = project.title;
-
+        // Subtitle div
         subtitle = document.createElement("div");
         subtitle.classList.add("subtitle");
         subtitle.innerHTML = project.subtitle;
         title.appendChild(subtitle);
-
+        // Hidden details div
+        details = document.createElement("div");
+        details.id = `${project.id}-details`;
+        details.style.display = "none";
+        details.setAttribute("aria-hidden", "true");
+        if (project.description.length > 0) {
+            for (paragraph of project.description) {
+                p = document.createElement("p");
+                p.innerHTML = paragraph;
+                details.appendChild(p);
+            }
+        } else {
+            p = document.createElement("p");
+            p.innerHTML = "No description available.";
+            details.appendChild(p);
+        }
+        // Append elements to project card
         projectCard.appendChild(thumbnail);
         projectCard.appendChild(title);
+        projectCard.appendChild(details);
         projectList.appendChild(projectCard);
     }
     createProjectLinkListeners();
 }
-
-/* Project loading mechanism */
 function createProjectLinkListeners() {
     Array.from(document.querySelectorAll(".project-card .thumbnail")).forEach(projectButton => {
         projectButton.addEventListener("click", function(event) {
@@ -217,13 +233,15 @@ function createProjectDetails(projectID) {
     if (clickedProjectID != undefined) {
         projectList = currentProjectListItem.parentNode;
         currentColumnCount = getGridElementColumnCount(projectList);
-
-        // Construct a project details element and insert it after the current project card
+        // Build a list item spanning an entire row to store the project details
         projectDetails = document.createElement("li");
         projectDetails.classList.add("project-details");
         projectDetails.style.gridColumn = `span ${currentColumnCount}`;
-
-        projectDetails.innerHTML = `<h3>Project "${clickedProjectID}" details here</h3>`; // TODO replace with actual project data
+        // Copy project details from the project card's hidden div into our placeholder and make it visible
+        projectDetails.innerHTML = document.getElementById(`${projectID}-details`).innerHTML;
+        projectDetails.style.display = "block";
+        details.removeAttribute("aria-hidden");
+        // Append to project list
         currentProjectListItem.insertAdjacentElement("afterend", projectDetails);
 
         // TODO loop through project cards and fade all except the selected one (disable? add class?)

@@ -13,72 +13,84 @@
         "id": "pokemon-api",
         "title": "Pokemon API",
         "subtitle": "Node.js, Express",
-        "thumbnail": ""
+        "thumbnail": "",
+        "description": []
     },
     {
         "id": "horse-colic",
         "title": "Prediction Model for Horse Colic Survival",
         "subtitle": "Python, Machine Learning",
-        "thumbnail": "horsedoc.jpg"
+        "thumbnail": "horsedoc.jpg",
+        "description": []
     },
     {
         "id": "mandelbrot",
         "title": "Mandelbrot Set Visualizer",
         "subtitle": "C++, FLTK",
-        "thumbnail": ""
+        "thumbnail": "",
+        "description": []
     },
     {
         "id": "toefl",
         "title": "TOEFL Solver",
         "subtitle": "C++, Machine Learning",
-        "thumbnail": ""
+        "thumbnail": "",
+        "description": []
     },
     {
         "id": "gis-renderer",
         "title": "GIS Renderer",
         "subtitle": "C++, Pathfinding",
-        "thumbnail": ""
+        "thumbnail": "",
+        "description": []
     },
     {
         "id": "markdown",
         "title": "Markdown Editor",
         "subtitle": "Java Swing",
-        "thumbnail": ""
+        "thumbnail": "",
+        "description": []
     },
     {
         "id": "pharma-db",
         "title": "Pharmacy Database",
         "subtitle": "MySQL",
-        "thumbnail": "pharma.jpg"
+        "thumbnail": "pharma.jpg",
+        "description": []
     },
     {
         "id": "catalog-viewer",
         "title": "CSUMB Catalog Mobile App",
         "subtitle": "Java, Android Studio",
-        "thumbnail": ""
+        "thumbnail": "",
+        "description": []
     },
     {
         "id": "caia",
         "title": "CAIA (mobile app prototype)",
         "subtitle": "Adobe Illustrator, Adobe XD",
-        "thumbnail": ""
+        "thumbnail": "",
+        "description": []
     },
     {
         "id": "chat",
         "title": "Encrypted Chat Demo",
         "subtitle": "Python, Mininet",
-        "thumbnail": ""
+        "thumbnail": "",
+        "description": []
     },
     {
         "id": "vr-paper",
         "title": "VR Industry Analysis",
         "subtitle": "Research paper",
-        "thumbnail": "vr.jpg"
+        "thumbnail": "vr.jpg",
+        "description": []
     },
     {
         "id": "ethics-paper",
         "title": "Face Recognition in Schools",
         "subtitle": "Research paper",
-        "thumbnail": "face_rec.jpg"
+        "thumbnail": "face_rec.jpg",
+        "description": []
     }
 ]

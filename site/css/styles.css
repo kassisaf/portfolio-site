@@ -302,6 +302,8 @@ svg.info {
 }
 .project-card, .project-details {
     border: var(--inner-border-size) solid var(--gray-40);
+}
+.project-card {
     /* background-color: var(--gray-20); */
     height: 200px;
     overflow: hidden;
