@@ -198,40 +198,47 @@ function createProjectLinkListeners() {
         projectButton.addEventListener("click", function(event) {
             currentProjectListItem = event.currentTarget.parentNode;
             clickedProjectID = currentProjectListItem.id;
-
             // Destroy any existing project details before creating new one
-            for (projectDetails of document.getElementsByClassName("project-details")) {
-                projectDetails.remove();
-            }
-            if (clickedProjectID != undefined) {
-                projectList = currentProjectListItem.parentNode;
-                currentColumnCount = getGridElementColumnCount(projectList);
-
-                // Construct a project details element and insert it after the current project card
-                projectDetails = document.createElement("li");
-                projectDetails.classList.add("project-details");
-                projectDetails.style.gridColumn = `span ${currentColumnCount}`;
-
-                projectDetails.innerHTML = `<h3>Project "${clickedProjectID}" details here</h3>`; // TODO replace with actual project data
-                currentProjectListItem.insertAdjacentElement("afterend", projectDetails);
-
-                // TODO loop through project cards and fade all except the selected one (disable? add class?)
-                // TODO set focus and tabIndex if needed for accessibility
-            }
-            // TODO set focus to project details
-
+            destroyProjectDetails();
+            createProjectDetails(clickedProjectID);
         });
     });
-    /* On browser resize, update project details span if present*/
+    // On browser resize, update project details span if present
     window.addEventListener("resize", function() {
-        // TODO not performant, find a better way... observer on grid-template-columns?
-        projectDetails = document.querySelector(".project-details");
-        if (projectDetails != undefined) {
-            projectDetails.style.gridColumn = `span 1`; // Shrink first for accurate column count
-            currentColumnCount = getGridElementColumnCount(projectDetails.parentNode);
-            projectDetails.style.gridColumn = `span ${currentColumnCount}`;
-        }
+        resizeProjectDetails();
     });
+}
+function destroyProjectDetails() {
+    for (projectDetails of document.getElementsByClassName("project-details")) {
+        projectDetails.remove();
+    }
+}
+function createProjectDetails(projectID) {
+    if (clickedProjectID != undefined) {
+        projectList = currentProjectListItem.parentNode;
+        currentColumnCount = getGridElementColumnCount(projectList);
+
+        // Construct a project details element and insert it after the current project card
+        projectDetails = document.createElement("li");
+        projectDetails.classList.add("project-details");
+        projectDetails.style.gridColumn = `span ${currentColumnCount}`;
+
+        projectDetails.innerHTML = `<h3>Project "${clickedProjectID}" details here</h3>`; // TODO replace with actual project data
+        currentProjectListItem.insertAdjacentElement("afterend", projectDetails);
+
+        // TODO loop through project cards and fade all except the selected one (disable? add class?)
+        // TODO set focus and tabIndex if needed for accessibility
+    }
+    // TODO set focus to project details
+}
+function resizeProjectDetails() {
+    // TODO not performant, find a better way... observer on grid-template-columns?
+    projectDetails = document.querySelector(".project-details");
+    if (projectDetails != undefined) {
+        projectDetails.style.gridColumn = `span 1`; // Shrink first for accurate column count
+        currentColumnCount = getGridElementColumnCount(projectDetails.parentNode);
+        projectDetails.style.gridColumn = `span ${currentColumnCount}`;
+    }
 }
 function getGridElementColumnCount(gridElement) {
     return window.getComputedStyle(gridElement).getPropertyValue("grid-template-columns").split(" ").length;
