@@ -1,142 +1,62 @@
 [
     {
         "id": "applitrack",
-        "title": "Applitrack",
-        "thumbnail": "",
-        "description": [
-            ""
-        ],
-        "media": [
-            {
-                "type": "",
-                "url": ""
-            }
-        ]
+        "title": "AppliTrack",
+        "subtitle": "Node.js, Express, MySQL",
+        "thumbnail": ""
     },
     {
         "id": "pokemon-api",
         "title": "Pokemon API",
-        "thumbnail": "",
-        "description": [
-            ""
-        ],
-        "media": [
-            {
-                "type": "",
-                "url": ""
-            }
-        ]
+        "subtitle": "Node.js, Express",
+        "thumbnail": ""
     },
     {
         "id": "mandelbrot",
         "title": "Mandelbrot Set Visualizer",
-        "thumbnail": "",
-        "description": [
-            ""
-        ],
-        "media": [
-            {
-                "type": "",
-                "url": ""
-            }
-        ]
+        "subtitle": "C++, FLTK",
+        "thumbnail": ""
     },
     {
         "id": "toefl",
         "title": "TOEFL Solver",
-        "thumbnail": "",
-        "description": [
-            ""
-        ],
-        "media": [
-            {
-                "type": "",
-                "url": ""
-            }
-        ]
-    },
-    {
-        "id": "vr-paper",
-        "title": "VR Industry Analysis",
-        "thumbnail": "vr.jpg",
-        "description": [
-            ""
-        ],
-        "media": [
-            {
-                "type": "",
-                "url": ""
-            }
-        ]
-    },
-    {
-        "id": "ethics-paper",
-        "title": "Face Recognition Study",
-        "thumbnail": "",
-        "description": [
-            ""
-        ],
-        "media": [
-            {
-                "type": "",
-                "url": ""
-            }
-        ]
+        "subtitle": "C++, Machine Learning",
+        "thumbnail": ""
     },
     {
         "id": "markdown",
         "title": "Markdown Editor",
-        "thumbnail": "",
-        "description": [
-            ""
-        ],
-        "media": [
-            {
-                "type": "",
-                "url": ""
-            }
-        ]
+        "subtitle": "Java Swing",
+        "thumbnail": ""
     },
     {
         "id": "pharma-db",
         "title": "Pharmacy Database",
-        "thumbnail": "",
-        "description": [
-            ""
-        ],
-        "media": [
-            {
-                "type": "",
-                "url": ""
-            }
-        ]
+        "subtitle": "MySQL",
+        "thumbnail": ""
     },
     {
         "id": "chat",
         "title": "Encrypted Chat Demo",
-        "thumbnail": "",
-        "description": [
-            ""
-        ],
-        "media": [
-            {
-                "type": "",
-                "url": ""
-            }
-        ]
+        "subtitle": "Python, Mininet",
+        "thumbnail": ""
     },
     {
         "id": "caia",
         "title": "CAIA (Mobile App Prototype)",
-        "thumbnail": "",
-        "description": [
-            ""
-        ],
-        "media": [
-            {
-                "type": "",
-                "url": ""
-            }
-        ]
+        "subtitle": "Adobe Illustrator, Adobe XD",
+        "thumbnail": ""
+    },
+    {
+        "id": "vr-paper",
+        "title": "VR Industry Analysis",
+        "subtitle": "Research paper",
+        "thumbnail": "vr.jpg"
+    },
+    {
+        "id": "ethics-paper",
+        "title": "Face Recognition in Schools",
+        "subtitle": "Research paper",
+        "thumbnail": ""
     }
 ]

@@ -171,17 +171,22 @@ async function populateProjectList() {
         projectCard = document.createElement("li");
         projectCard.classList.add("project-card");
         projectCard.id = project.id;
-        
+
         thumbnail = document.createElement("div");
         thumbnail.classList.add("thumbnail");
         thumbnail.style.backgroundImage = `url(/site/img/projects/thumbnails/${project.thumbnail})`;
-        projectCard.appendChild(thumbnail);
 
         title = document.createElement("div");
         title.classList.add("title");
         title.innerHTML = project.title;
-        projectCard.appendChild(title);
 
+        subtitle = document.createElement("div");
+        subtitle.classList.add("subtitle");
+        subtitle.innerHTML = project.subtitle;
+        title.appendChild(subtitle);
+
+        projectCard.appendChild(thumbnail);
+        projectCard.appendChild(title);
         projectList.appendChild(projectCard);
     }
     createProjectLinkListeners();
@@ -192,14 +197,12 @@ function createProjectLinkListeners() {
     Array.from(document.querySelectorAll(".project-card .thumbnail")).forEach(projectButton => {
         projectButton.addEventListener("click", function(event) {
             currentProjectListItem = event.currentTarget.parentNode;
-            // projectID = currentProjectListItem.attributes["project-id"];
             clickedProjectID = currentProjectListItem.id;
-            console.log(clickedProjectID);
-            // Destroy any existing project details
+
+            // Destroy any existing project details before creating new one
             for (projectDetails of document.getElementsByClassName("project-details")) {
                 projectDetails.remove();
             }
-
             if (clickedProjectID != undefined) {
                 projectList = currentProjectListItem.parentNode;
                 currentColumnCount = getGridElementColumnCount(projectList);
@@ -215,7 +218,6 @@ function createProjectLinkListeners() {
                 // TODO loop through project cards and fade all except the selected one (disable? add class?)
                 // TODO set focus and tabIndex if needed for accessibility
             }
-
             // TODO set focus to project details
 
         });

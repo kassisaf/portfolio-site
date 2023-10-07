@@ -337,6 +337,16 @@ svg.info {
     width: 100%;
     text-align: center;
 }
+.project-card .subtitle {
+    font-size: 1rem;
+    font-weight: normal;
+	color: #f2f2f2;
+    text-shadow: 0 0 40px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 4px;
+}
 .project-details {
 	grid-column: span 5;
 }
