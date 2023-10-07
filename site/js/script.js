@@ -170,7 +170,7 @@ async function populateProjectList() {
     for (project of projects) {
         projectCard = document.createElement("li");
         projectCard.classList.add("project-card");
-        projectCard.setAttribute("project-id", project.id);
+        projectCard.id = project.id;
         
         thumbnail = document.createElement("div");
         thumbnail.classList.add("thumbnail");
@@ -192,13 +192,15 @@ function createProjectLinkListeners() {
     Array.from(document.querySelectorAll(".project-card .thumbnail")).forEach(projectButton => {
         projectButton.addEventListener("click", function(event) {
             currentProjectListItem = event.currentTarget.parentNode;
-            projectID = currentProjectListItem.attributes["project-id"];
+            // projectID = currentProjectListItem.attributes["project-id"];
+            clickedProjectID = currentProjectListItem.id;
+            console.log(clickedProjectID);
             // Destroy any existing project details
             for (projectDetails of document.getElementsByClassName("project-details")) {
                 projectDetails.remove();
             }
 
-            if (projectID != undefined) {
+            if (clickedProjectID != undefined) {
                 projectList = currentProjectListItem.parentNode;
                 currentColumnCount = getGridElementColumnCount(projectList);
 
@@ -207,12 +209,15 @@ function createProjectLinkListeners() {
                 projectDetails.classList.add("project-details");
                 projectDetails.style.gridColumn = `span ${currentColumnCount}`;
 
-                projectDetails.innerHTML = `<h3>Project "${projectID.value}" details here</h3>`; // TODO replace with actual project data
+                projectDetails.innerHTML = `<h3>Project "${clickedProjectID}" details here</h3>`; // TODO replace with actual project data
                 currentProjectListItem.insertAdjacentElement("afterend", projectDetails);
 
                 // TODO loop through project cards and fade all except the selected one (disable? add class?)
                 // TODO set focus and tabIndex if needed for accessibility
             }
+
+            // TODO set focus to project details
+
         });
     });
     /* On browser resize, update project details span if present*/

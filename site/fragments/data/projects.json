@@ -1,5 +1,61 @@
 [
     {
+        "id": "applitrack",
+        "title": "Applitrack",
+        "thumbnail": "",
+        "description": [
+            ""
+        ],
+        "media": [
+            {
+                "type": "",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "id": "pokemon-api",
+        "title": "Pokemon API",
+        "thumbnail": "",
+        "description": [
+            ""
+        ],
+        "media": [
+            {
+                "type": "",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "id": "mandelbrot",
+        "title": "Mandelbrot Set Visualizer",
+        "thumbnail": "",
+        "description": [
+            ""
+        ],
+        "media": [
+            {
+                "type": "",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "id": "toefl",
+        "title": "TOEFL Solver",
+        "thumbnail": "",
+        "description": [
+            ""
+        ],
+        "media": [
+            {
+                "type": "",
+                "url": ""
+            }
+        ]
+    },
+    {
         "id": "vr-paper",
         "title": "VR Industry Analysis",
         "thumbnail": "vr.jpg",
@@ -14,7 +70,21 @@
         ]
     },
     {
-        "id": "markdown-editor",
+        "id": "ethics-paper",
+        "title": "Face Recognition Study",
+        "thumbnail": "",
+        "description": [
+            ""
+        ],
+        "media": [
+            {
+                "type": "",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "id": "markdown",
         "title": "Markdown Editor",
         "thumbnail": "",
         "description": [
@@ -30,6 +100,34 @@
     {
         "id": "pharma-db",
         "title": "Pharmacy Database",
+        "thumbnail": "",
+        "description": [
+            ""
+        ],
+        "media": [
+            {
+                "type": "",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "id": "chat",
+        "title": "Encrypted Chat Demo",
+        "thumbnail": "",
+        "description": [
+            ""
+        ],
+        "media": [
+            {
+                "type": "",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "id": "caia",
+        "title": "CAIA (Mobile App Prototype)",
         "thumbnail": "",
         "description": [
             ""
