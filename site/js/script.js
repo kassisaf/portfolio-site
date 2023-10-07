@@ -170,8 +170,13 @@ async function populateProjectList() {
     projectList = document.getElementById("project-list");
     for (project of projects) {
         projectCard = document.createElement("li");
+
+        // button = document.createElement("button");
+
         projectCard.classList.add("project-card");
         projectCard.id = project.id;
+        projectCard.tabIndex = 0;
+        projectCard.role = "button";
         // Image background div
         thumbnail = document.createElement("div");
         thumbnail.classList.add("thumbnail");
@@ -198,7 +203,7 @@ async function populateProjectList() {
             }
         } else {
             p = document.createElement("p");
-            p.innerHTML = "No description available.";
+            p.innerHTML = `No description provided for ${project.title}.`;
             details.appendChild(p);
         }
         // Append elements to project card
@@ -210,8 +215,8 @@ async function populateProjectList() {
     createProjectLinkListeners();
 }
 function createProjectLinkListeners() {
-    Array.from(document.querySelectorAll(".project-card .thumbnail")).forEach(projectButton => {
-        projectButton.addEventListener("click", function(event) {
+    Array.from(document.querySelectorAll(".project-card .thumbnail")).forEach(thumbnail => {
+        thumbnail.addEventListener("click", function(event) {
             currentProjectListItem = event.currentTarget.parentNode;
             clickedProjectID = currentProjectListItem.id;
             // Destroy any existing project details before creating new one
@@ -240,7 +245,8 @@ function createProjectDetails(projectID) {
         // Copy project details from the project card's hidden div into our placeholder and make it visible
         projectDetails.innerHTML = document.getElementById(`${projectID}-details`).innerHTML;
         projectDetails.style.display = "block";
-        details.removeAttribute("aria-hidden");
+        projectDetails.removeAttribute("aria-hidden");
+        projectDetails.tabIndex = 0;
         // Append to project list
         currentProjectListItem.insertAdjacentElement("afterend", projectDetails);
 
