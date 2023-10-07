@@ -300,8 +300,9 @@ svg.info {
     grid-gap: 1rem;
     grid-auto-flow: dense;
 }
-.project-card {
+.project-card, .project-details {
     border: var(--inner-border-size) solid var(--gray-40);
+    /* background-color: var(--gray-20); */
     height: 200px;
     overflow: hidden;
     position: relative;

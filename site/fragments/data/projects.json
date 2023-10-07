@@ -1,5 +1,6 @@
 [
     {
+        "id": "vr-paper",
         "title": "VR Industry Analysis",
         "thumbnail": "vr.jpg",
         "description": [
@@ -13,6 +14,7 @@
         ]
     },
     {
+        "id": "markdown-editor",
         "title": "Markdown Editor",
         "thumbnail": "",
         "description": [
@@ -26,6 +28,7 @@
         ]
     },
     {
+        "id": "pharma-db",
         "title": "Pharmacy Database",
         "thumbnail": "",
         "description": [

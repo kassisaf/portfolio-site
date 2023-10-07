@@ -170,6 +170,7 @@ async function populateProjectList() {
     for (project of projects) {
         projectCard = document.createElement("li");
         projectCard.classList.add("project-card");
+        projectCard.setAttribute("project-id", project.id);
         
         thumbnail = document.createElement("div");
         thumbnail.classList.add("thumbnail");
@@ -190,14 +191,14 @@ async function populateProjectList() {
 function createProjectLinkListeners() {
     Array.from(document.querySelectorAll(".project-card .thumbnail")).forEach(projectButton => {
         projectButton.addEventListener("click", function(event) {
-            projectID = event.currentTarget.attributes["project-id"];
+            currentProjectListItem = event.currentTarget.parentNode;
+            projectID = currentProjectListItem.attributes["project-id"];
             // Destroy any existing project details
             for (projectDetails of document.getElementsByClassName("project-details")) {
                 projectDetails.remove();
             }
 
             if (projectID != undefined) {
-                currentProjectListItem = event.currentTarget.parentNode;
                 projectList = currentProjectListItem.parentNode;
                 currentColumnCount = getGridElementColumnCount(projectList);
 
@@ -206,8 +207,7 @@ function createProjectLinkListeners() {
                 projectDetails.classList.add("project-details");
                 projectDetails.style.gridColumn = `span ${currentColumnCount}`;
 
-
-                projectDetails.innerHTML = `<h3>Project ${projectID.value} details Here</h3>`; // TODO replace with actual project data
+                projectDetails.innerHTML = `<h3>Project "${projectID.value}" details here</h3>`; // TODO replace with actual project data
                 currentProjectListItem.insertAdjacentElement("afterend", projectDetails);
 
                 // TODO loop through project cards and fade all except the selected one (disable? add class?)
