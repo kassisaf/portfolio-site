@@ -306,7 +306,7 @@ svg.info {
     overflow: hidden;
     position: relative;
 }
-.project-card .background {
+.project-card .thumbnail {
     background: url(../img/projects/thumbnails/placeholder.jpg);
     background-size: cover;
 	background-position: center;
@@ -319,7 +319,7 @@ svg.info {
     justify-content: center;
     align-items: center;
 }
-.project-card .background:hover {
+.project-card .thumbnail:hover {
     cursor: pointer;
 	transform: scale(1.1);
 }
@@ -333,6 +333,8 @@ svg.info {
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
+    width: 100%;
+    text-align: center;
 }
 .project-details {
 	grid-column: span 5;
@@ -576,6 +578,6 @@ label {
         transition: none !important;
     }
     .project-card:hover {
-        background-size: 100%;
+        transform: scale(1);
     }
 }

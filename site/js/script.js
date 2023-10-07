@@ -170,11 +170,17 @@ async function populateProjectList() {
     for (project of projects) {
         projectCard = document.createElement("li");
         projectCard.classList.add("project-card");
-        projectCard.style.backgroundImage = `url(${project.thumbnail})`;
-        projectCard.innerHTML = `
-            <h3>${project.name}</h3>
-            <p>${project.description}</p>
-        `;
+        
+        thumbnail = document.createElement("div");
+        thumbnail.classList.add("thumbnail");
+        thumbnail.style.backgroundImage = `url(${project.thumbnail})`;
+        projectCard.appendChild(thumbnail);
+
+        title = document.createElement("div");
+        title.classList.add("title");
+        title.innerHTML = project.title;
+        projectCard.appendChild(title);
+
         projectList.appendChild(projectCard);
     }
     createProjectLinkListeners();
@@ -200,6 +206,8 @@ function createProjectLinkListeners() {
                 projectDetails = document.createElement("li");
                 projectDetails.classList.add("project-details");
                 projectDetails.style.gridColumn = `span ${currentColumnCount}`;
+
+
                 projectDetails.innerHTML = `<h3>Project ${projectID.value} details Here</h3>`; // TODO replace with actual project data
                 currentProjectListItem.insertAdjacentElement("afterend", projectDetails);
 
