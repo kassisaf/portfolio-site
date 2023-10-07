@@ -302,27 +302,37 @@ svg.info {
 }
 .project-card {
     border: var(--inner-border-size) solid var(--gray-40);
-    background-color: var(--gray-20);
-	background-image: url(../img/projects/thumbnails/placeholder.jpg);
-	background-size: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+.project-card .background {
+    background: url(../img/projects/thumbnails/placeholder.jpg);
+    background-size: cover;
 	background-position: center;
 	box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
-    height: 200px;
+    width: 100%;
+    height: 100%;
+    transition: var(--animation-slow) ease-in-out;
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: var(--animation-slow) ease-in-out;
-	animation-direction: alternate;
 }
-.project-card:hover {
-    transition: var(--animation-slow) ease-in-out;
-	background-size: 110%;
+.project-card .background:hover {
     cursor: pointer;
+	transform: scale(1.1);
 }
-.project-card h3 {
+.project-card .title {
+    font-size: 1.5rem;
+    font-weight: bold;
 	color: #f2f2f2;
     text-shadow: 0 0 40px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.4);
-	text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
 }
 .project-details {
 	grid-column: span 5;
