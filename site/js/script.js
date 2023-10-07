@@ -173,7 +173,7 @@ async function populateProjectList() {
         
         thumbnail = document.createElement("div");
         thumbnail.classList.add("thumbnail");
-        thumbnail.style.backgroundImage = `url(${project.thumbnail})`;
+        thumbnail.style.backgroundImage = `url(/site/img/projects/thumbnails/${project.thumbnail})`;
         projectCard.appendChild(thumbnail);
 
         title = document.createElement("div");
@@ -188,19 +188,18 @@ async function populateProjectList() {
 
 /* Project loading mechanism */
 function createProjectLinkListeners() {
-    Array.from(document.querySelectorAll(".project-card button.link")).forEach(projectButton => {
+    Array.from(document.querySelectorAll(".project-card .thumbnail")).forEach(projectButton => {
         projectButton.addEventListener("click", function(event) {
             projectID = event.currentTarget.attributes["project-id"];
+            // Destroy any existing project details
+            for (projectDetails of document.getElementsByClassName("project-details")) {
+                projectDetails.remove();
+            }
+
             if (projectID != undefined) {
-                // console.log(projectID.value);
-                currentProjectListItem = event.target.parentNode.parentNode;
+                currentProjectListItem = event.currentTarget.parentNode;
                 projectList = currentProjectListItem.parentNode;
                 currentColumnCount = getGridElementColumnCount(projectList);
-
-                // Destroy any existing project details
-                for (projectDetails of document.getElementsByClassName("project-details")) {
-                    projectDetails.remove();
-                }
 
                 // Construct a project details element and insert it after the current project card
                 projectDetails = document.createElement("li");

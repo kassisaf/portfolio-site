@@ -1,8 +1,33 @@
 [
     {
-        "id": "",
         "title": "VR Industry Analysis",
-        "thumbnail": "/site/img/projects/thumbnails/vr.jpg",
+        "thumbnail": "vr.jpg",
+        "description": [
+            ""
+        ],
+        "media": [
+            {
+                "type": "",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "title": "Markdown Editor",
+        "thumbnail": "",
+        "description": [
+            ""
+        ],
+        "media": [
+            {
+                "type": "",
+                "url": ""
+            }
+        ]
+    },
+    {
+        "title": "Pharmacy Database",
+        "thumbnail": "",
         "description": [
             ""
         ],
