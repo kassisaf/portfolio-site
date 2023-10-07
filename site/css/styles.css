@@ -163,9 +163,12 @@ button[disabled] {
 p {
     text-indent: 2rem;
     text-align: justify;
-    max-width: 800px;
+    max-width: 680px;
     line-height: 140%;
     margin: 0.75rem 0;
+}
+p.wider {
+    max-width: 800px;
 }
 h1, h2, h3, h4, h5, h6 {
     margin: 1rem 0;
@@ -352,6 +355,10 @@ svg.info {
 }
 .project-details {
 	grid-column: span 5;
+}
+.project-details .description {
+    display: inline-block;
+    padding: 0 1rem;
 }
 
 /* Courses table */

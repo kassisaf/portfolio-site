@@ -170,9 +170,6 @@ async function populateProjectList() {
     projectList = document.getElementById("project-list");
     for (project of projects) {
         projectCard = document.createElement("li");
-
-        // button = document.createElement("button");
-
         projectCard.classList.add("project-card");
         projectCard.id = project.id;
         projectCard.tabIndex = 0;
@@ -242,12 +239,17 @@ function createProjectDetails(projectID) {
         projectDetails = document.createElement("li");
         projectDetails.classList.add("project-details");
         projectDetails.style.gridColumn = `span ${currentColumnCount}`;
+        projectDetails.setAttribute("align", "center");
+
         // Copy project details from the project card's hidden div into our placeholder and make it visible
-        projectDetails.innerHTML = document.getElementById(`${projectID}-details`).innerHTML;
-        projectDetails.style.display = "block";
-        projectDetails.removeAttribute("aria-hidden");
-        projectDetails.tabIndex = 0;
+        description = document.createElement("div");
+        description.classList.add("description");
+        description.innerHTML = document.getElementById(`${projectID}-details`).innerHTML;
+        description.removeAttribute("aria-hidden");
+        description.tabIndex = 0;
+        
         // Append to project list
+        projectDetails.appendChild(description);
         currentProjectListItem.insertAdjacentElement("afterend", projectDetails);
 
         // TODO loop through project cards and fade all except the selected one (disable? add class?)
