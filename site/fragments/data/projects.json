@@ -26,7 +26,7 @@
     {
         "id": "gis-renderer",
         "title": "GIS Renderer",
-        "subtitle": "C++, Greedy Walk Algorithm",
+        "subtitle": "C++, Pathfinding",
         "thumbnail": ""
     },
     {
