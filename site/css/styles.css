@@ -330,9 +330,9 @@ svg.info {
 	color: #f2f2f2;
     text-shadow: 0 0 40px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.4);
     position: absolute;
-    top: 50%;
+    bottom: 12%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
     pointer-events: none;
     width: 100%;
     text-align: center;
