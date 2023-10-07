@@ -12,6 +12,12 @@
         "thumbnail": ""
     },
     {
+        "id": "horse-colic",
+        "title": "Prediction Model for Horse Colic Survival",
+        "subtitle": "Python, Machine Learning",
+        "thumbnail": ""
+    },
+    {
         "id": "mandelbrot",
         "title": "Mandelbrot Set Visualizer",
         "subtitle": "C++, FLTK",
