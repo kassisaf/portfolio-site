@@ -248,7 +248,16 @@ function createProjectDetails(projectID) {
         description.removeAttribute("aria-hidden");
         description.tabIndex = 0;
         
+        // Add close button
+        closeButton = document.createElement("button");
+        closeButton.classList.add("close");
+        closeButton.innerHTML = "&times;";
+        closeButton.addEventListener("click", function() {
+            destroyProjectDetails();
+        });
+
         // Append to project list
+        projectDetails.appendChild(closeButton);
         projectDetails.appendChild(description);
         currentProjectListItem.insertAdjacentElement("afterend", projectDetails);
 
