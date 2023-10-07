@@ -186,12 +186,23 @@ async function populateProjectList() {
         subtitle = document.createElement("div");
         subtitle.classList.add("subtitle");
         subtitle.innerHTML = project.subtitle;
+        // If no thumbnail, remove the darkened image overlay and text shadows
+        if (project.thumbnail == "") {
+            thumbnail.style.boxShadow = "none";
+            title.style.textShadow = "none";
+            subtitle.style.textShadow = "none";
+        }
         title.appendChild(subtitle);
         // Hidden details div
         details = document.createElement("div");
         details.id = `${project.id}-details`;
         details.style.display = "none";
         details.setAttribute("aria-hidden", "true");
+        // Add project heading
+        heading = document.createElement("h3");
+        heading.innerHTML = project.title;
+        details.appendChild(heading);
+        // Populate description
         if (project.description.length > 0) {
             for (paragraph of project.description) {
                 p = document.createElement("p");
@@ -200,7 +211,8 @@ async function populateProjectList() {
             }
         } else {
             p = document.createElement("p");
-            p.innerHTML = `No description provided for ${project.title}.`;
+            p.innerHTML = "No description provided";
+            p.style.textIndent = "0";
             details.appendChild(p);
         }
         // Append elements to project card
@@ -247,7 +259,7 @@ function createProjectDetails(projectID) {
         description.innerHTML = document.getElementById(`${projectID}-details`).innerHTML;
         description.removeAttribute("aria-hidden");
         description.tabIndex = 0;
-        
+
         // Add close button
         closeButton = document.createElement("button");
         closeButton.classList.add("close");

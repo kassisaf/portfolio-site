@@ -355,6 +355,7 @@ svg.info {
 }
 .project-details {
 	grid-column: span 5;
+    background-color: var(--gray-20);
 }
 .project-details .description {
     display: inline-block;
