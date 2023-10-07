@@ -170,7 +170,7 @@ async function populateProjectList() {
     for (project of projects) {
         projectCard = document.createElement("li");
         projectCard.classList.add("project-card");
-        projectCard.style.backgroundImage = `url(${project.image})`;
+        projectCard.style.backgroundImage = `url(${project.thumbnail})`;
         projectCard.innerHTML = `
             <h3>${project.name}</h3>
             <p>${project.description}</p>

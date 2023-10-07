@@ -303,10 +303,17 @@ svg.info {
 .project-card {
     border: var(--inner-border-size) solid var(--gray-40);
     background-color: var(--gray-20);
+	background-image: url(../img/projects/thumbnails/placeholder.jpg);
+	background-size: cover;
+	background-position: center;
     height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.project-card h3 {
+    text-shadow: 0 0 40px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.4);
+	text-align: center;
 }
 .project-details {
 	grid-column: span 5;
