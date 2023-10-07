@@ -343,15 +343,17 @@ svg.info {
     text-align: center;
     padding: 0 0.5rem;
 }
-.project-card .subtitle {
+.subtitle {
     font-size: 1rem;
     font-weight: normal;
+    margin-top: 4px;
+}
+.project-card .subtitle {
 	color: #f2f2f2;
     text-shadow: 0 0 40px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.4);
     pointer-events: none;
     width: 100%;
     text-align: center;
-    margin-top: 4px;
 }
 .project-details {
 	grid-column: span 5;

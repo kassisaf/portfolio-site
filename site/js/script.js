@@ -187,7 +187,7 @@ async function populateProjectList() {
         subtitle.classList.add("subtitle");
         subtitle.innerHTML = project.subtitle;
         // If no thumbnail, remove the darkened image overlay and text shadows
-        if (project.thumbnail == "") {
+        if (project.thumbnail.length == 0) {
             thumbnail.style.boxShadow = "none";
             title.style.textShadow = "none";
             subtitle.style.textShadow = "none";
@@ -214,6 +214,14 @@ async function populateProjectList() {
             p.innerHTML = "No description provided";
             p.style.textIndent = "0";
             details.appendChild(p);
+        }
+        // Add "completed for"
+        if (project.completed_for.length > 0) {
+            completedFor = document.createElement("h4");
+            completedFor.innerHTML = `(Completed for ${project.completed_for})`;
+            completedFor.classList.add("subtitle");
+            completedFor.classList.add("italic");
+            details.appendChild(completedFor);
         }
         // Append elements to project card
         projectCard.appendChild(thumbnail);

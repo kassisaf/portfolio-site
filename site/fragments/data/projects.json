@@ -81,7 +81,7 @@
         "subtitle": "Adobe Illustrator, Adobe XD",
         "thumbnail": "",
         "description": [],
-        "completed_for": ""
+        "completed_for": "CSUMB's CST 328: Digital Art and Design"
     },
     {
         "id": "chat",
@@ -89,7 +89,7 @@
         "subtitle": "Python, Mininet",
         "thumbnail": "",
         "description": [],
-        "completed_for": ""
+        "completed_for": "CSUMB's CST 311: Introduction to Computer Networks"
     },
     {
         "id": "vr-paper",
@@ -97,7 +97,7 @@
         "subtitle": "Research paper",
         "thumbnail": "vr.jpg",
         "description": [],
-        "completed_for": ""
+        "completed_for": "CSUMB's CST 300: Major ProSeminar"
     },
     {
         "id": "ethics-paper",
@@ -105,6 +105,6 @@
         "subtitle": "Research paper",
         "thumbnail": "face_rec.jpg",
         "description": [],
-        "completed_for": ""
+        "completed_for": "CSUMB's CST 300: Major ProSeminar"
     }
 ]
