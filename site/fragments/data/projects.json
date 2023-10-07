@@ -48,6 +48,12 @@
         "thumbnail": "pharma.jpg"
     },
     {
+        "id": "catalog-viewer",
+        "title": "CSUMB Catalog Mobile App",
+        "subtitle": "Java, Android Studio",
+        "thumbnail": ""
+    },
+    {
         "id": "caia",
         "title": "CAIA (mobile app prototype)",
         "subtitle": "Adobe Illustrator, Adobe XD",
