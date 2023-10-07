@@ -48,15 +48,15 @@
         "thumbnail": "pharma.jpg"
     },
     {
-        "id": "chat",
-        "title": "Encrypted Chat Demo",
-        "subtitle": "Python, Mininet",
-        "thumbnail": ""
-    },
-    {
         "id": "caia",
         "title": "CAIA (mobile app prototype)",
         "subtitle": "Adobe Illustrator, Adobe XD",
+        "thumbnail": ""
+    },
+    {
+        "id": "chat",
+        "title": "Encrypted Chat Demo",
+        "subtitle": "Python, Mininet",
         "thumbnail": ""
     },
     {
