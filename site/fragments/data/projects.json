@@ -5,7 +5,7 @@
         "subtitle": "Node.js, Express, MySQL",
         "thumbnail": "",
         "description": [
-            "AppliTrack is a full-stack web application designed to help job-seekers organize and track the status of their job applications.  Users are able to register, login, and provide basic information about jobs that they've applied to.  They can then view and sort these applications by date, status, and company.",
+            "AppliTrack is a full-stack web app designed to help job-seekers organize and track the status of their job applications.  Users are able to register, login, and provide basic information about jobs that they've applied to.  They can then view and sort these applications by date, status, and company.",
             "With a meaningful userbase, AppliTrack could be expanded to include features such as a job search engine, a resume builder, and a community forum, as well as provide data insights based on the user's job application history.",
             "The backend was built in Node.js using an Express and MySQL database.  The frontend is built using the EJS templating engine along with vanilla HTML, CSS, and JavaScript."
         ]
