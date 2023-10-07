@@ -8,90 +8,103 @@
             "AppliTrack is a full-stack web app designed to help job-seekers organize and track the status of their job applications.  Users are able to register, login, and provide basic information about jobs that they've applied to.  They can then view and sort these applications by date, status, and company.",
             "With a meaningful userbase, AppliTrack could be expanded to include features such as a job search engine, a resume builder, and a community forum, as well as provide data insights based on the user's job application history.",
             "The backend was built in Node.js using an Express and MySQL database.  The frontend is built using the EJS templating engine along with vanilla HTML, CSS, and JavaScript."
-        ]
+        ],
+        "completed_for": "CSUMB's CST 336: Internet Programming"
     },
     {
         "id": "pokemon-api",
         "title": "Pokemon API",
         "subtitle": "Node.js, Express",
         "thumbnail": "",
-        "description": []
+        "description": [],
+        "completed_for": "CSUMB's CST 336: Internet Programming"
     },
     {
         "id": "horse-colic",
         "title": "Prediction Model for Horse Colic Survival",
         "subtitle": "Python, Machine Learning",
         "thumbnail": "horsedoc.jpg",
-        "description": []
+        "description": [],
+        "completed_for": "CSUMB's CST 383: Introduction to Data Science"
     },
     {
         "id": "mandelbrot",
         "title": "Mandelbrot Set Visualizer",
         "subtitle": "C++, FLTK",
         "thumbnail": "",
-        "description": []
+        "description": [],
+        "completed_for": "ARC's CISP 400: Object Oriented Programming with C++"
     },
     {
         "id": "toefl",
         "title": "TOEFL Solver",
         "subtitle": "C++, Machine Learning",
         "thumbnail": "",
-        "description": []
+        "description": [],
+        "completed_for": "ARC's CISP 400: Object Oriented Programming with C++"
     },
     {
         "id": "gis-renderer",
         "title": "GIS Renderer",
         "subtitle": "C++, Pathfinding",
         "thumbnail": "",
-        "description": []
+        "description": [],
+        "completed_for": "ARC's CISP 400: Object Oriented Programming with C++"
     },
     {
         "id": "markdown",
         "title": "Markdown Editor",
         "subtitle": "Java Swing",
         "thumbnail": "",
-        "description": []
+        "description": [],
+        "completed_for": "CSUMB's CST 338: Software Design"
     },
     {
         "id": "pharma-db",
         "title": "Pharmacy Database",
         "subtitle": "MySQL",
         "thumbnail": "pharma.jpg",
-        "description": []
+        "description": [],
+        "completed_for": "CSUMB's CST 363: Introduction to Database Systems"
     },
     {
         "id": "catalog-viewer",
         "title": "CSUMB Catalog Mobile App",
         "subtitle": "Java, Android Studio",
         "thumbnail": "",
-        "description": []
+        "description": [],
+        "completed_for": "CSUMB's CST 363: Introduction to Database Systems"
     },
     {
         "id": "caia",
         "title": "CAIA (mobile app prototype)",
         "subtitle": "Adobe Illustrator, Adobe XD",
         "thumbnail": "",
-        "description": []
+        "description": [],
+        "completed_for": ""
     },
     {
         "id": "chat",
         "title": "Encrypted Chat Demo",
         "subtitle": "Python, Mininet",
         "thumbnail": "",
-        "description": []
+        "description": [],
+        "completed_for": ""
     },
     {
         "id": "vr-paper",
         "title": "VR Industry Analysis",
         "subtitle": "Research paper",
         "thumbnail": "vr.jpg",
-        "description": []
+        "description": [],
+        "completed_for": ""
     },
     {
         "id": "ethics-paper",
         "title": "Face Recognition in Schools",
         "subtitle": "Research paper",
         "thumbnail": "face_rec.jpg",
-        "description": []
+        "description": [],
+        "completed_for": ""
     }
 ]

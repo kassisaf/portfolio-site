@@ -231,7 +231,6 @@ function createProjectLinkListeners() {
             // Destroy any existing project details before creating new one
             destroyProjectDetails();
             createProjectDetails(clickedProjectID);
-            currentProjectListItem.scrollIntoView({behavior: "smooth", block: "start"});
         });
     });
     // On browser resize, update project details span if present
