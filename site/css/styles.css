@@ -317,6 +317,7 @@ svg.info {
 .project-card:hover {
     transition: var(--animation-slow) ease-in-out;
 	background-size: 110%;
+    cursor: pointer;
 }
 .project-card h3 {
 	color: #f2f2f2;
@@ -563,5 +564,8 @@ label {
 @media (prefers-reduced-motion) {
     * {
         transition: none !important;
+    }
+    .project-card:hover {
+        background-size: 100%;
     }
 }
