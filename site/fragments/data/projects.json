@@ -24,6 +24,12 @@
         "thumbnail": ""
     },
     {
+        "id": "gis-renderer",
+        "title": "GIS Renderer",
+        "subtitle": "C++, Greedy Walk Algorithm",
+        "thumbnail": ""
+    },
+    {
         "id": "markdown",
         "title": "Markdown Editor",
         "subtitle": "Java Swing",

@@ -174,7 +174,7 @@ async function populateProjectList() {
 
         thumbnail = document.createElement("div");
         thumbnail.classList.add("thumbnail");
-        thumbnail.style.background = `url(../img/projects/thumbnails/${project.thumbnail})`;
+        thumbnail.style.backgroundImage = `url(../img/projects/thumbnails/${project.thumbnail})`;
 
         title = document.createElement("div");
         title.classList.add("title");
