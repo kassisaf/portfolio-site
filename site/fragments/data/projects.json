@@ -1,32 +1,16 @@
 [
     {
         "id": "",
-        "title": "",
-        "thumbnail": "",
-        "description": ""
-    },
-    {
-        "id": "",
-        "title": "",
-        "thumbnail": "",
-        "description": ""
-    },
-    {
-        "id": "",
-        "title": "",
-        "thumbnail": "",
-        "description": ""
-    },
-    {
-        "id": "",
-        "title": "",
-        "thumbnail": "",
-        "description": ""
-    },
-    {
-        "id": "",
-        "title": "",
-        "thumbnail": "",
-        "description": ""
+        "name": "Industry Analysis research paper",
+        "thumbnail": "../../img/projects/thumbnail/vr.jpg",
+        "description": [
+            ""
+        ],
+        "media": [
+            {
+                "type": "",
+                "url": ""
+            }
+        ]
     }
 ]

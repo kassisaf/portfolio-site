@@ -76,10 +76,10 @@ async function loadSection(fragmentPath, title) {
     // Run section-specific setup
     switch (title) {
         case "courses":
-            createModalListeners();
+            populateCourseList();
             break;
         case "projects":
-            createProjectLinkListeners();
+            populateProjectList();
             break;
         default:
     }
@@ -157,6 +157,27 @@ function createModalListeners() {
                 hideModal(activeModal.id);
         };
     });
+}
+
+async function populateCourseList() {
+    // TODO load course data from JSON
+    createModalListeners();
+}
+
+async function populateProjectList() {
+    projects = JSON.parse(await fetchHtmlAsText(`fragments/data/projects.json`));
+    projectList = document.getElementById("project-list");
+    for (project of projects) {
+        projectCard = document.createElement("li");
+        projectCard.classList.add("project-card");
+        projectCard.style.backgroundImage = `url(${project.image})`;
+        projectCard.innerHTML = `
+            <h3>${project.name}</h3>
+            <p>${project.description}</p>
+        `;
+        projectList.appendChild(projectCard);
+    }
+    createProjectLinkListeners();
 }
 
 /* Project loading mechanism */
